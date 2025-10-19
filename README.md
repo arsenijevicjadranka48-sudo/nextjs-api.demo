@@ -1,64 +1,123 @@
-<!-- Recenzije sekcija -->
-<section id="recenzije">
-  <div class="container">
-    <h2>Recenzije naših klijenata</h2>
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsenijević – Mašinska obrada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #34495e;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        .service {
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
 
-    <div class="review-box">
-      <h3>Petar M. – ⭐⭐⭐⭐⭐</h3>
-      <p>Izuzetno kvalitetna usluga i tačnost u dogovoru. Preporuka svima!</p>
-    </div>
+<header>
+    <h1>Arsenijević</h1>
+    <p>Profesionalne usluge mašinske obrade metala</p>
+</header>
 
-    <div class="review-box">
-      <h3>Marko L. – ⭐⭐⭐⭐⭐</h3>
-      <p>Brza izrada i preciznost na visokom nivou. Svaka čast timu MCA 2017!</p>
-    </div>
+<nav>
+    <a href="#o-nama">O nama</a>
+    <a href="#usluge">Usluge</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
 
-    <div class="review-box">
-      <h3>Jovan K. – ⭐⭐⭐⭐☆</h3>
-      <p>Odlična komunikacija i profesionalan pristup poslu.</p>
-    </div>
-
-    <div class="review-box">
-      <h3>Chips Way d.o.o., Čačak – ⭐⭐⭐⭐⭐</h3>
-      <p>Sarađujemo sa MCA 2017 od početka i impresionirani smo profesionalizmom i preciznošću. Uvijek na vrijeme, kvalitet vrhunski – preporučujemo!</p>
-    </div>
-
-    <div class="review-box">
-      <h3>PWO Grupa, Preljina kod Čačka – ⭐⭐⭐⭐⭐</h3>
-      <p>Brza reakcija, odlična komunikacija i krajnji proizvod koji je prevazišao naša očekivanja. Izuzetno zadovoljni saradnjom.</p>
-    </div>
-
-    <div class="review-box">
-      <h3>Betonjerka Čačak – ⭐⭐⭐⭐☆</h3>
-      <p>Pouzdan partner u svim fazama projekta. Rok isporuke je bio malo duži, ali krajnji rezultat je u skladu sa dogovorom.</p>
-    </div>
-
-    <div class="review-box">
-      <h3>TotalEnergies "Spas" servis, Čačak – ⭐⭐⭐⭐⭐</h3>
-      <p>Profesionalan pristup i visoki standard usluge. Poslovi izvršeni precizno i sa pažnjom. Preporučujemo!</p>
-    </div>
-  </div>
+<section id="o-nama">
+    <h2>O nama</h2>
+    <p>Firma "Arsenijević" nudi precizne i pouzdane usluge mašinske obrade metala. Sa dugogodišnjim iskustvom u industriji, specijalizovani smo za razne metode obrade, uz primenu savremene tehnologije i alata. Naš cilj je kvalitet, preciznost i zadovoljstvo klijenata.</p>
 </section>
 
-<!-- Lokacija i kontakt -->
-<section id="lokacija">
-  <div class="container">
-    <h2>Lokacija & Kontakt</h2>
-    <p>Nalazimo se u Čačku, Srbija. Firma radi mašinsku obradu metala pod imenom <strong>MCA 2017</strong>.</p>
-
-    <div class="contact-info">
-      <p><strong>Firma:</strong> MCA 2017</p>
-      <p><strong>Telefon:</strong> (nije dostupno)</p>
-      <p><strong>Email:</strong> (nije dostupno)</p>
-      <p><strong>Adresa:</strong> Čačak</p>
+<section id="usluge">
+    <h2>Naše usluge</h2>
+    
+    <div class="service">
+        <h3>Glodanje</h3>
+        <p>Visokoprecizno glodanje različitih materijala prema tehničkim zahtevima klijenata.</p>
     </div>
 
-    <div style="margin-top: 30px;">
-      <iframe
-        src="https://www.google.com/maps?q=%C4%8Ca%C4%8Dak,+Srbija&output=embed"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
+    <div class="service">
+        <h3>Struganje</h3>
+        <p>Obrada rotacionih delova sa velikom tačnošću i glatkoćom površine.</p>
     </div>
-  </div>
+
+    <div class="service">
+        <h3>Ravno brušenje</h3>
+        <p>Postizanje izuzetno ravnih površina i niskih tolerancija na različitim materijalima.</p>
+    </div>
+
+    <div class="service">
+        <h3>Obimno brušenje</h3>
+        <p>Obrada cilindričnih površina sa preciznom završnom obradom.</p>
+    </div>
+
+    <div class="service">
+        <h3>Erodiranje – žičano (Wire EDM)</h3>
+        <p>Precizna obrada metala pomoću erodiranja žicom za komplikovane oblike i fine detalje.</p>
+    </div>
+
+    <div class="service">
+        <h3>Erodiranje – elektroda (Sinker EDM)</h3>
+        <p>Obrada unutrašnjih oblika i kalupa metodom elektro erozije pomoću elektroda.</p>
+    </div>
+
+    <div class="service">
+        <h3>Lasersko sečenje lima</h3>
+        <p>Precizno lasersko sečenje različitih vrsta limova prema crtežima ili CAD fajlovima.</p>
+    </div>
 </section>
+
+<section id="kontakt">
+    <h2>Kontakt</h2>
+    <p><strong>Adresa:</strong> [Unesite adresu firme]</p>
+    <p><strong>Telefon:</strong> [Unesite broj telefona]</p>
+    <p><strong>Email:</strong> [Unesite email adresu]</p>
+    <p><strong>Radno vreme:</strong> Ponedeljak - Petak, 08:00 - 16:00</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Arsenijević – Sva prava zadržana.</p>
+</footer>
+
+</body>
+</html>
