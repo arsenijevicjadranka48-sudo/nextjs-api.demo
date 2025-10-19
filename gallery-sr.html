@@ -1,0 +1,29 @@
+<h2>Galerija</h2>
+<div id="gallery-grid">
+  <img src="https://i.imgur.com/3g7nmJC.png" alt="Mašinska obrada 1">
+  <img src="https://i.imgur.com/9R1f4wS.jpg" alt="Mašinska obrada 2">
+  <img src="https://i.imgur.com/fV6kH4E.jpg" alt="Mašinska obrada 3">
+  <img src="https://i.imgur.com/8u3kXxB.jpg" alt="Mašinska obrada 4">
+</div>
+
+<script>
+document.querySelectorAll('#gallery-grid img').forEach(img=>{
+  img.onclick = ()=>{
+    let lightbox = document.getElementById('lightbox');
+    if(!lightbox){
+      lightbox = document.createElement('div');
+      lightbox.id = 'lightbox';
+      lightbox.style = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center; z-index:1000;";
+      const lbImg = document.createElement('img');
+      lbImg.style.maxWidth='90%';
+      lbImg.style.maxHeight='90%';
+      lbImg.style.borderRadius='10px';
+      lightbox.appendChild(lbImg);
+      lightbox.onclick = ()=>{lightbox.style.display='none';};
+      document.body.appendChild(lightbox);
+    }
+    lightbox.style.display='flex';
+    lightbox.querySelector('img').src = img.src;
+  }
+});
+</script>
