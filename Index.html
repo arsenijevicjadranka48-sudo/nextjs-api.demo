@@ -1,166 +1,267 @@
 <!DOCTYPE html>
 <html lang="bs">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automatika Pro</title>
-<style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; }
-nav { background: #333; color: white; padding: 10px 20px; position: sticky; top:0; display:flex; justify-content:space-between; align-items:center; }
-nav a { color:white; margin-right: 15px; text-decoration:none; }
-nav .lang { margin-left: auto; }
-nav .lang button { margin-left:5px; padding:5px 10px; border:none; border-radius:5px; cursor:pointer; }
-section { padding: 60px 20px; display:none; }
-section.active { display:block; }
-h1,h2 { color:#333; }
-.projects { display: flex; flex-wrap: wrap; gap: 20px; }
-.project { background:#f2f2f2; padding:20px; flex:1 1 250px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
-form { display:flex; flex-direction: column; max-width:400px; }
-input, textarea, button { margin-bottom:10px; padding:10px; border-radius:5px; border:1px solid #ccc; }
-button { background:#333; color:white; border:none; cursor:pointer; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arduino & Automatika - Projekti i Komponente</title>
+  <style>
+    * { scroll-behavior: smooth; margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; color: #222; background-color: #f5f5f5; }
+
+    header {
+      background: linear-gradient(45deg, #0059b3, #0080ff);
+      color: white; text-align: center; padding: 80px 20px;
+      background-image: url('mca.png'); background-size: cover; background-position: center;
+      position: relative;
+    }
+    header::after {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    header h1, header p, header a { position: relative; z-index: 2; }
+    header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    header p { font-size: 1.2em; margin-bottom: 20px; }
+    header a {
+      background: #ffcc00; color: #000; padding: 10px 20px; text-decoration: none;
+      border-radius: 5px; font-weight: bold;
+    }
+
+    nav {
+      display: flex; justify-content: center; gap: 20px; background: #003366; padding: 15px;
+    }
+    nav a {
+      color: white; text-decoration: none; font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #ffcc00; }
+
+    section {
+      padding: 60px 20px; background: white; margin: 20px auto;
+      max-width: 1000px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h2 { color: #003366; margin-bottom: 15px; }
+    p { line-height: 1.6; margin-bottom: 20px; }
+
+    .btn-back {
+      display: inline-block; background: #003366; color: white; padding: 10px 15px;
+      text-decoration: none; border-radius: 5px;
+    }
+    .btn-back:hover { background: #0059b3; }
+
+    .projekti-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .projekat {
+      background: #e6f0ff;
+      border: 1px solid #b3d1ff;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .projekat img {
+      width: 100%;
+      border-radius: 8px;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .add-part {
+      background: #ffcc00; color: #000; padding: 10px 20px;
+      border: none; border-radius: 5px; font-weight: bold; cursor: pointer;
+    }
+    .add-part:hover { background: #ffd633; }
+
+    #novaLista {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .dio {
+      background: #e6f0ff;
+      border: 1px solid #b3d1ff;
+      border-radius: 6px;
+      padding: 10px 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 180px;
+    }
+    .obrisi {
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 3px 7px;
+    }
+
+    /* Kontakt forma */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+      width: 100%;
+    }
+    textarea { resize: vertical; min-height: 120px; }
+    button[type="submit"] {
+      background: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 12px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button[type="submit"]:hover { background: #0059b3; }
+  </style>
 </head>
 <body>
 
+<header id="pocetna">
+  <h1>Arduino & Automatika Projekti</h1>
+  <p>Profesionalno programiranje, projektovanje i izrada automatizovanih sistema – od ideje do gotovog rješenja.</p>
+  <a href="#o-nama">Saznaj više</a>
+</header>
+
 <nav>
-  <div class="menu">
-    <a href="#pocetna">Početna</a>
-    <a href="#o-nama">O nama</a>
-    <a href="#usluge">Usluge</a>
-    <a href="#projekti">Projekti</a>
-    <a href="#dijelovi">Dijelovi</a>
-    <a href="#recenzije">Recenzije</a>
-    <a href="#kontakt">Kontakt</a>
-  </div>
-  <div class="lang">
-    <button onclick="showLang('bs')">BS</button>
-    <button onclick="showLang('en')">EN</button>
-    <button onclick="showLang('de')">DE</button>
-  </div>
+  <a href="#o-nama">O nama</a>
+  <a href="#usluge">Usluge</a>
+  <a href="#projekti">Projekti</a>
+  <a href="#dijelovi">Dijelovi</a>
+  <a href="#recenzije">Recenzije</a>
+  <a href="#kontakt">Kontakt</a>
 </nav>
 
-<!-- BOSANSKI -->
-<section id="bs" class="active">
-  <h1>Dobrodošli u Automatika Pro</h1>
-  <p>Mi nudimo profesionalna rješenja u Arduino projektima i industrijskoj automatizaciji.</p>
-
+<section id="o-nama">
   <h2>O nama</h2>
-  <p>Automatika Pro je firma sa dugogodišnjim iskustvom u razvoju Arduino i industrijskih projekata. Naš cilj je kvalitetno i pouzdano rješenje za sve naše klijente.</p>
+  <p>Naš tim okuplja stručnjake iz oblasti elektronike, mehatronike i industrijske automatike koji dijele strast prema inovacijama i praktičnim rješenjima. 
+     Radimo na projektima različite složenosti – od jednostavnih automatskih prekidača do složenih industrijskih kontrolnih sistema.</p>
+  <p>Iskustvo od preko 10 godina u industrijskom sektoru omogućava nam da razumijemo potrebe modernih proizvodnih pogona i kreiramo rješenja koja su 
+     pouzdana, ekonomična i jednostavna za korištenje. Naši sistemi su već implementirani u cementarama, pilanama, proizvodnim halama i poljoprivredi.</p>
+  <p>Posvećeni smo stalnom razvoju i učenju – pratimo nove tehnologije i ugradnju pametnih komponenti koje klijentima donose stvarnu korist i dugoročne uštede.</p>
+  <a class="btn-back" href="#pocetna">Nazad na početak</a>
+</section>
 
+<section id="usluge">
   <h2>Usluge</h2>
+  <p>Nudimo cjelokupan proces izrade automatizovanih sistema, uključujući idejno rješenje, tehnički proračun, programiranje, izradu elektronskih ploča i montažu opreme. 
+     Svaki sistem je dizajniran prema potrebama klijenta i može se naknadno proširiti ili unaprijediti.</p>
   <ul>
-    <li>Projektovanje i programiranje Arduino sistema</li>
-    <li>Industrijska automatizacija</li>
-    <li>Prodaja Arduino komponenti</li>
-    <li>Održavanje i podrška projekata</li>
+    <li>Arduino i PLC programiranje</li>
+    <li>Upravljanje motorima, senzorima i relejima</li>
+    <li>Automatizacija pumpi, ventilatora i rasvjete</li>
+    <li>SCADA nadzor i bežične komunikacije</li>
+    <li>Izrada prilagođenih PCB ploča</li>
+    <li>Servis i održavanje automatike</li>
   </ul>
+  <p>Naš pristup podrazumijeva transparentnost, detaljnu dokumentaciju i podršku nakon isporuke. 
+     Kroz fleksibilan pristup projektima, klijenti uvijek dobijaju rješenje koje najbolje odgovara njihovim potrebama i budžetu.</p>
+  <a class="btn-back" href="#pocetna">Nazad na početak</a>
+</section>
 
+<section id="projekti">
   <h2>Projekti</h2>
-  <div class="projects">
-    <div class="project"><h3>Navodnjavanje</h3><p>Automatski sistem za navodnjavanje baziran na Arduino kontroleru.</p></div>
-    <div class="project"><h3>Detektor plina</h3><p>Sigurnosni sistem za detekciju opasnih gasova u industrijskim pogonima.</p></div>
-    <div class="project"><h3>Osvjetljenje</h3><p>Pametno kontrolisano LED osvjetljenje za dom i industriju.</p></div>
+  <p>Naši realizovani projekti pokazuju širinu našeg iskustva i mogućnosti. Svaki projekat planiramo pažljivo, testiramo i dokumentujemo prije puštanja u rad.</p>
+  <div class="projekti-grid">
+    <div class="projekat">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Uno_-_R3.jpg" alt="Arduino Uno">
+      <h3>Automatski sistem za navodnjavanje</h3>
+      <p>Projektovan i programiran sistem koji mjeri vlažnost tla i automatski aktivira pumpe. 
+         Energetski efikasan i prilagođen radu na solarnu energiju.</p>
+    </div>
+    <div class="projekat">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Relay_module_4_channel.jpg" alt="Relej modul">
+      <h3>Detekcija plina i alarmni sistem</h3>
+      <p>Arduino sistem za praćenje koncentracije plina s bežičnim upozorenjem i automatskim isključenjem napajanja.</p>
+    </div>
+    <div class="projekat">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Arduino_Mega_2560_R3.jpg" alt="Arduino Mega">
+      <h3>Industrijsko mjerenje temperature</h3>
+      <p>Implementacija sistema sa više temperaturnih senzora povezanih na SCADA aplikaciju za nadzor u realnom vremenu.</p>
+    </div>
   </div>
-
-  <h2>Dijelovi</h2>
-  <p>Nudimo širok izbor Arduino i elektronike komponenti za vaše projekte.</p>
-
-  <h2>Recenzije</h2>
-  <p>„Odlična podrška i kvalitetno izvedeni projekti!“ – Zadovoljni klijent</p>
-  <p>„Brza i profesionalna realizacija Arduino sistema.“ – Zadovoljni klijent</p>
-
-  <h2>Kontakt</h2>
-  <form action="mailto:halilovicnusret8@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="ime" placeholder="Vaše ime" required>
-    <input type="email" name="email" placeholder="Vaš email" required>
-    <textarea name="poruka" rows="5" placeholder="Vaša poruka" required></textarea>
-    <button type="submit">Pošalji</button>
-  </form>
+  <a class="btn-back" href="#pocetna">Nazad na početak</a>
 </section>
 
-<!-- ENGLISH -->
-<section id="en">
-  <h1>Welcome to Automatika Pro</h1>
-  <p>We offer professional solutions in Arduino projects and industrial automation.</p>
-
-  <h2>About Us</h2>
-  <p>Automatika Pro is a company with long-standing experience in Arduino and industrial project development. Our goal is high-quality and reliable solutions for all our clients.</p>
-
-  <h2>Services</h2>
-  <ul>
-    <li>Arduino system design and programming</li>
-    <li>Industrial automation</li>
-    <li>Sale of Arduino components</li>
-    <li>Project maintenance and support</li>
-  </ul>
-
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="project"><h3>Irrigation</h3><p>Automatic irrigation system based on Arduino controller.</p></div>
-    <div class="project"><h3>Gas Detector</h3><p>Safety system for detecting hazardous gases in industrial plants.</p></div>
-    <div class="project"><h3>Lighting</h3><p>Smart LED lighting controlled for home and industry.</p></div>
-  </div>
-
-  <h2>Components</h2>
-  <p>We offer a wide range of Arduino and electronic components for your projects.</p>
-
-  <h2>Reviews</h2>
-  <p>"Excellent support and high-quality projects!" – Satisfied client</p>
-  <p>"Fast and professional Arduino system implementation." – Satisfied client</p>
-
-  <h2>Contact</h2>
-  <form action="mailto:halilovicnusret8@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send</button>
-  </form>
+<section id="dijelovi">
+  <h2>Prodaja dijelova</h2>
+  <p>U našoj ponudi možete pronaći Arduino ploče, senzore, motore, releje, žice, napajanja i druge komponente potrebne 
+     za izradu automatizovanih projekata. Kvalitetne komponente, brza isporuka i mogućnost podrške prilikom odabira dijelova.</p>
+  <button class="add-part" onclick="dodajDio()">Dodaj novi dio</button>
+  <div id="novaLista"></div>
+  <a class="btn-back" href="#pocetna">Nazad na početak</a>
 </section>
 
-<!-- DEUTSCH -->
-<section id="de">
-  <h1>Willkommen bei Automatika Pro</h1>
-  <p>Wir bieten professionelle Lösungen in Arduino-Projekten und industrieller Automatisierung.</p>
+<section id="recenzije">
+  <h2>Recenzije korisnika</h2>
+  <p>⭐⭐⭐⭐⭐ “Izuzetno profesionalan pristup! Sistem radi bez greške već godinu dana.” – Marko P.</p>
+  <p>⭐⭐⭐⭐⭐ “Preporučujem svakome ko želi kvalitetnu automatiku po razumnoj cijeni.” – Jasmin K.</p>
+  <p>⭐⭐⭐⭐ “Odlična komunikacija i podrška nakon završetka projekta.” – Amra D.</p>
+  <a class="btn-back" href="#pocetna">Nazad na početak</a>
+</section>
 
-  <h2>Über uns</h2>
-  <p>Automatika Pro ist ein Unternehmen mit langjähriger Erfahrung in Arduino- und Industrieprojekten. Unser Ziel ist eine hochwertige und zuverlässige Lösung für alle unsere Kunden.</p>
-
-  <h2>Dienstleistungen</h2>
-  <ul>
-    <li>Arduino-Systemdesign und Programmierung</li>
-    <li>Industrielle Automatisierung</li>
-    <li>Verkauf von Arduino-Komponenten</li>
-    <li>Projektwartung und Unterstützung</li>
-  </ul>
-
-  <h2>Projekte</h2>
-  <div class="projects">
-    <div class="project"><h3>Bewässerung</h3><p>Automatisches Bewässerungssystem basierend auf Arduino-Controller.</p></div>
-    <div class="project"><h3>Gassensor</h3><p>Sicherheitssystem zur Erkennung gefährlicher Gase in Industrieanlagen.</p></div>
-    <div class="project"><h3>Beleuchtung</h3><p>Intelligente LED-Beleuchtung für Zuhause und Industrie.</p></div>
-  </div>
-
-  <h2>Bauteile</h2>
-  <p>Wir bieten eine große Auswahl an Arduino- und Elektronikkomponenten für Ihre Projekte.</p>
-
-  <h2>Bewertungen</h2>
-  <p>„Ausgezeichneter Support und qualitativ hochwertige Projekte!“ – Zufriedener Kunde</p>
-  <p>„Schnelle und professionelle Umsetzung von Arduino-Systemen.“ – Zufriedener Kunde</p>
-
+<section id="kontakt">
   <h2>Kontakt</h2>
+  <p>Želite saradnju ili imate ideju za projekat? Pošaljite nam poruku putem forme ispod  
+     ili direktno na e-mail: <b>halilovicnusret8@gmail.com</b></p>
+
   <form action="mailto:halilovicnusret8@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Ihr Name" required>
-    <input type="email" name="email" placeholder="Ihre Email" required>
-    <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
-    <button type="submit">Senden</button>
+    <input type="text" name="Ime" placeholder="Vaše ime" required>
+    <input type="email" name="Email" placeholder="Vaš e-mail" required>
+    <textarea name="Poruka" placeholder="Unesite vašu poruku..." required></textarea>
+    <button type="submit">Pošalji poruku</button>
   </form>
+
+  <a class="btn-back" href="#pocetna">Nazad na početak</a>
 </section>
 
 <script>
-function showLang(lang) {
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-  document.getElementById(lang).classList.add('active');
-}
+  function ucitajDijelove() {
+    const sacuvani = JSON.parse(localStorage.getItem("dijelovi") || "[]");
+    sacuvani.forEach(dodajDioNaStranicu);
+  }
+
+  function dodajDio() {
+    const ime = prompt("Unesite naziv dijela:");
+    if (ime) {
+      dodajDioNaStranicu(ime);
+      const dijelovi = JSON.parse(localStorage.getItem("dijelovi") || "[]");
+      dijelovi.push(ime);
+      localStorage.setItem("dijelovi", JSON.stringify(dijelovi));
+    }
+  }
+
+  function dodajDioNaStranicu(ime) {
+    const novaLista = document.getElementById("novaLista");
+    const div = document.createElement("div");
+    div.className = "dio";
+    div.innerHTML = `${ime} <button class="obrisi" onclick="obrisiDio(this, '${ime}')">x</button>`;
+    novaLista.appendChild(div);
+  }
+
+  function obrisiDio(btn, ime) {
+    btn.parentElement.remove();
+    let dijelovi = JSON.parse(localStorage.getItem("dijelovi") || "[]");
+    dijelovi = dijelovi.filter(d => d !== ime);
+    localStorage.setItem("dijelovi", JSON.stringify(dijelovi));
+  }
+
+  window.onload = ucitajDijelove;
 </script>
 
 </body>
