@@ -48,9 +48,26 @@
     }
     .btn-back:hover { background: #0059b3; }
 
-    .gallery img {
-      width: 150px; height: auto; margin: 10px; border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    .projekti-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .projekat {
+      background: #e6f0ff;
+      border: 1px solid #b3d1ff;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .projekat img {
+      width: 100%;
+      border-radius: 8px;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 10px;
     }
 
     .add-part {
@@ -84,13 +101,40 @@
       cursor: pointer;
       padding: 3px 7px;
     }
+
+    /* Kontakt forma */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+      width: 100%;
+    }
+    textarea { resize: vertical; min-height: 120px; }
+    button[type="submit"] {
+      background: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 12px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button[type="submit"]:hover { background: #0059b3; }
   </style>
 </head>
 <body>
 
 <header id="pocetna">
   <h1>Arduino & Automatika Projekti</h1>
-  <p>Profesionalno programiranje i izrada automatizovanih sistema – od ideje do gotovog rješenja.</p>
+  <p>Profesionalno programiranje, projektovanje i izrada automatizovanih sistema – od ideje do gotovog rješenja.</p>
   <a href="#o-nama">Saznaj više</a>
 </header>
 
@@ -105,31 +149,51 @@
 
 <section id="o-nama">
   <h2>O nama</h2>
-  <p>Naš tim se bavi razvojem i implementacijom Arduino i industrijskih rješenja za automatizaciju procesa. 
-     Više od 10 godina iskustva u industriji omogućava nam da realizujemo i najkompleksnije projekte — od upravljanja
-     motorima i senzorima do kompletnog sistema daljinskog nadzora i regulacije.</p>
-  <p>Posebnu pažnju posvećujemo kvalitetu, sigurnosti i energetskoj efikasnosti svakog projekta. Naš cilj je da
-     pomognemo klijentima da modernizuju svoje proizvodne linije i smanje troškove kroz pametne i pouzdane tehnologije.</p>
+  <p>Naš tim okuplja stručnjake iz oblasti elektronike, mehatronike i industrijske automatike koji dijele strast prema inovacijama i praktičnim rješenjima. 
+     Radimo na projektima različite složenosti – od jednostavnih automatskih prekidača do složenih industrijskih kontrolnih sistema.</p>
+  <p>Iskustvo od preko 10 godina u industrijskom sektoru omogućava nam da razumijemo potrebe modernih proizvodnih pogona i kreiramo rješenja koja su 
+     pouzdana, ekonomična i jednostavna za korištenje. Naši sistemi su već implementirani u cementarama, pilanama, proizvodnim halama i poljoprivredi.</p>
+  <p>Posvećeni smo stalnom razvoju i učenju – pratimo nove tehnologije i ugradnju pametnih komponenti koje klijentima donose stvarnu korist i dugoročne uštede.</p>
   <a class="btn-back" href="#pocetna">Nazad na početak</a>
 </section>
 
 <section id="usluge">
   <h2>Usluge</h2>
-  <p>Nudimo kompletnu uslugu programiranja, projektovanja i izrade automatizovanih uređaja. 
-     Naši projekti uključuju PLC i Arduino kontrolere, razvoj elektronskih ploča, programiranje senzora, releja,
-     elektromotora i komunikaciju sa SCADA sistemima. Sve komponente pažljivo biramo kako bismo osigurali pouzdan rad.</p>
-  <p>Uz svaku uslugu dobijate dokumentaciju, tehničku podršku i mogućnost kasnijeg nadogradnje sistema.</p>
+  <p>Nudimo cjelokupan proces izrade automatizovanih sistema, uključujući idejno rješenje, tehnički proračun, programiranje, izradu elektronskih ploča i montažu opreme. 
+     Svaki sistem je dizajniran prema potrebama klijenta i može se naknadno proširiti ili unaprijediti.</p>
+  <ul>
+    <li>Arduino i PLC programiranje</li>
+    <li>Upravljanje motorima, senzorima i relejima</li>
+    <li>Automatizacija pumpi, ventilatora i rasvjete</li>
+    <li>SCADA nadzor i bežične komunikacije</li>
+    <li>Izrada prilagođenih PCB ploča</li>
+    <li>Servis i održavanje automatike</li>
+  </ul>
+  <p>Naš pristup podrazumijeva transparentnost, detaljnu dokumentaciju i podršku nakon isporuke. 
+     Kroz fleksibilan pristup projektima, klijenti uvijek dobijaju rješenje koje najbolje odgovara njihovim potrebama i budžetu.</p>
   <a class="btn-back" href="#pocetna">Nazad na početak</a>
 </section>
 
 <section id="projekti">
   <h2>Projekti</h2>
-  <p>Naši projekti obuhvataju širok spektar aplikacija: od sistema za automatsko navodnjavanje i detekciju plina, 
-     do kontrole temperature i osvjetljenja u industrijskim pogonima. Svaki projekat je jedinstven i prilagođen specifičnim potrebama klijenta.</p>
-  <div class="gallery">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Uno_-_R3.jpg" alt="Arduino Uno">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Arduino_Mega_2560_R3.jpg" alt="Arduino Mega">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Relay_module_4_channel.jpg" alt="Relej modul">
+  <p>Naši realizovani projekti pokazuju širinu našeg iskustva i mogućnosti. Svaki projekat planiramo pažljivo, testiramo i dokumentujemo prije puštanja u rad.</p>
+  <div class="projekti-grid">
+    <div class="projekat">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Uno_-_R3.jpg" alt="Arduino Uno">
+      <h3>Automatski sistem za navodnjavanje</h3>
+      <p>Projektovan i programiran sistem koji mjeri vlažnost tla i automatski aktivira pumpe. 
+         Energetski efikasan i prilagođen radu na solarnu energiju.</p>
+    </div>
+    <div class="projekat">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Relay_module_4_channel.jpg" alt="Relej modul">
+      <h3>Detekcija plina i alarmni sistem</h3>
+      <p>Arduino sistem za praćenje koncentracije plina s bežičnim upozorenjem i automatskim isključenjem napajanja.</p>
+    </div>
+    <div class="projekat">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Arduino_Mega_2560_R3.jpg" alt="Arduino Mega">
+      <h3>Industrijsko mjerenje temperature</h3>
+      <p>Implementacija sistema sa više temperaturnih senzora povezanih na SCADA aplikaciju za nadzor u realnom vremenu.</p>
+    </div>
   </div>
   <a class="btn-back" href="#pocetna">Nazad na početak</a>
 </section>
@@ -153,8 +217,16 @@
 
 <section id="kontakt">
   <h2>Kontakt</h2>
-  <p>Želite saradnju ili imate ideju za projekat? Pošaljite nam poruku na e-mail: <b>info@automatika-pro.site</b>  
-     ili nas kontaktirajte putem društvenih mreža. Na svaki upit odgovaramo u roku od 24 sata.</p>
+  <p>Želite saradnju ili imate ideju za projekat? Pošaljite nam poruku putem forme ispod  
+     ili direktno na e-mail: <b>halilovicnusret8@gmail.com</b></p>
+
+  <form action="mailto:halilovicnusret8@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="Ime" placeholder="Vaše ime" required>
+    <input type="email" name="Email" placeholder="Vaš e-mail" required>
+    <textarea name="Poruka" placeholder="Unesite vašu poruku..." required></textarea>
+    <button type="submit">Pošalji poruku</button>
+  </form>
+
   <a class="btn-back" href="#pocetna">Nazad na početak</a>
 </section>
 
