@@ -1,0 +1,8 @@
+# robots.txt za automatika-pro.site
+
+# Dozvoli svim tražilicama da indeksiraju cijeli sajt
+User-agent: *
+Disallow:
+
+# Sitemap lokacija
+Sitemap: https://automatika-pro.site/sitemap.xml
