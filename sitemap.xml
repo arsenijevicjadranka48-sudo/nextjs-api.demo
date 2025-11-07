@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Početna -->
+  <url>
+    <loc>https://automatika-pro.site/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Sekcija O nama -->
+  <url>
+    <loc>https://automatika-pro.site/#o-nama</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sekcija Usluge -->
+  <url>
+    <loc>https://automatika-pro.site/#usluge</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sekcija Projekti -->
+  <url>
+    <loc>https://automatika-pro.site/#projekti</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projekti u kvadratićima -->
+  <url>
+    <loc>https://automatika-pro.site/#projekat-navodnjavanje</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://automatika-pro.site/#projekat-detektor-plina</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://automatika-pro.site/#projekat-osvjetljenje</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Sekcija Prodaja dijelova -->
+  <url>
+    <loc>https://automatika-pro.site/#dijelovi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Sekcija Recenzije -->
+  <url>
+    <loc>https://automatika-pro.site/#recenzije</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Sekcija Kontakt -->
+  <url>
+    <loc>https://automatika-pro.site/#kontakt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
