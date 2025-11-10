@@ -121,16 +121,16 @@
 
 <section id="o-nama">
   <h2 id="onama-naslov">O nama</h2>
-  <p>Naš tim okuplja stručnjake iz oblasti elektronike, mehatronike, automatike i programiranja, koji dijele zajedničku strast prema modernim tehnologijama. Kroz godine iskustva razvili smo brojne projekte u industrijskoj automatizaciji, kućnoj elektronici, pametnim sistemima i IoT rješenjima.</p>
-  <p>Fokusirani smo na praktična i pouzdana rješenja, bilo da se radi o kontroli motora, automatizaciji rasvjete, mjerenju parametara okoline ili nadzoru procesa. Klijentima nudimo i savjetovanje, edukaciju i tehničku podršku za samostalni rad sa Arduino i PLC sistemima.</p>
-  <p>Vizija naše firme je stvaranje pristupačne automatike i tehnologije koja olakšava svakodnevni život i rad. Naši projekti su dokaz da se inovacija može postići i sa malim budžetom, ali velikom stručnošću i posvećenošću.</p>
+  <p id="onama-tekst1">Naš tim okuplja stručnjake iz oblasti elektronike, mehatronike, automatike i programiranja, koji dijele zajedničku strast prema modernim tehnologijama.</p>
+  <p id="onama-tekst2">Fokusirani smo na praktična i pouzdana rješenja, bilo da se radi o kontroli motora, automatizaciji rasvjete, mjerenju parametara okoline ili nadzoru procesa.</p>
+  <p id="onama-tekst3">Vizija naše firme je stvaranje pristupačne automatike i tehnologije koja olakšava svakodnevni život i rad.</p>
   <a class="btn-back" href="#pocetna">Nazad na početak</a>
 </section>
 
 <section id="usluge">
   <h2 id="usluge-naslov">Usluge</h2>
-  <p>Nudimo širok spektar profesionalnih usluga iz oblasti automatike i elektronike:</p>
-  <ul>
+  <p id="usluge-tekst">Nudimo širok spektar profesionalnih usluga iz oblasti automatike i elektronike:</p>
+  <ul id="lista-usluga">
     <li>Programiranje Arduino i PLC kontrolera</li>
     <li>Projektovanje i izrada elektronskih ploča i sistema</li>
     <li>Automatizacija kućnih i industrijskih procesa</li>
@@ -138,24 +138,23 @@
     <li>Ugradnja senzora, aktuatora i nadzornih sistema</li>
     <li>Razvoj pametnih uređaja (IoT)</li>
   </ul>
-  <p>Naš pristup je uvijek individualan — analiziramo problem, nudimo rješenje i implementiramo ga u skladu sa zahtjevima klijenta. Garantujemo kvalitet, sigurnost i dugotrajnost svakog sistema.</p>
   <a class="btn-back" href="#pocetna">Nazad na početak</a>
 </section>
 
 <section id="projekti">
-  <h2>Projekti</h2>
+  <h2 id="projekti-naslov">Projekti</h2>
   <div class="projekti-grid">
     <div class="projekat">
-      <h3>Pametni sistem rasvjete</h3>
-      <p>Razvijen sistem za automatsko upravljanje rasvjetom u poslovnim prostorima putem senzora pokreta i svjetla, sa mogućnošću ručne kontrole preko mobilne aplikacije.</p>
+      <h3 id="proj1-naslov">Pametni sistem rasvjete</h3>
+      <p id="proj1-tekst">Razvijen sistem za automatsko upravljanje rasvjetom u poslovnim prostorima putem senzora pokreta i svjetla.</p>
     </div>
     <div class="projekat">
-      <h3>Detekcija gasova u industriji</h3>
-      <p>Sonda za nadzor kvaliteta zraka i alarmni sistem integrisan sa centralnim nadzornim uređajem.</p>
+      <h3 id="proj2-naslov">Detekcija gasova u industriji</h3>
+      <p id="proj2-tekst">Sonda za nadzor kvaliteta zraka i alarmni sistem integrisan sa centralnim nadzornim uređajem.</p>
     </div>
     <div class="projekat">
-      <h3>Automatsko navodnjavanje</h3>
-      <p>Arduino sistem za nadzor vlage u tlu i automatsko pokretanje pumpi za navodnjavanje vrtova i plastenika.</p>
+      <h3 id="proj3-naslov">Automatsko navodnjavanje</h3>
+      <p id="proj3-tekst">Arduino sistem za nadzor vlage u tlu i automatsko pokretanje pumpi za navodnjavanje vrtova i plastenika.</p>
     </div>
   </div>
   <a class="btn-back" href="#pocetna">Nazad na početak</a>
@@ -163,7 +162,7 @@
 
 <section id="kontakt">
   <h2 id="kontakt-naslov">Kontakt</h2>
-  <p>Pošaljite nam poruku putem forme ispod ili direktno na e-mail: <b>halilovicnusret8@gmail.com</b></p>
+  <p id="kontakt-tekst">Pošaljite nam poruku putem forme ispod ili direktno na e-mail: <b>halilovicnusret8@gmail.com</b></p>
   <form action="https://formspree.io/f/mayvlbqk" method="POST">
     <input type="text" name="ime" placeholder="Vaše ime" required>
     <input type="email" name="email" placeholder="Vaš e-mail" required>
@@ -171,6 +170,111 @@
     <button type="submit">Pošalji poruku</button>
   </form>
 </section>
+
+<script>
+function postaviJezik(jezik) {
+  const t = {
+    bs: {
+      naslov: "Arduino & Automatika Projekti",
+      podnaslov: "Profesionalno programiranje, projektovanje i izrada automatizovanih sistema – od ideje do gotovog rješenja.",
+      saznajvise: "Saznaj više",
+      nav: ["O nama", "Usluge", "Projekti", "Kontakt"],
+      onama: [
+        "Naš tim okuplja stručnjake iz oblasti elektronike, mehatronike, automatike i programiranja, koji dijele zajedničku strast prema modernim tehnologijama.",
+        "Fokusirani smo na praktična i pouzdana rješenja, bilo da se radi o kontroli motora, automatizaciji rasvjete, mjerenju parametara okoline ili nadzoru procesa.",
+        "Vizija naše firme je stvaranje pristupačne automatike i tehnologije koja olakšava svakodnevni život i rad."
+      ],
+      usluge: "Nudimo širok spektar profesionalnih usluga iz oblasti automatike i elektronike:",
+      lista: [
+        "Programiranje Arduino i PLC kontrolera",
+        "Projektovanje i izrada elektronskih ploča i sistema",
+        "Automatizacija kućnih i industrijskih procesa",
+        "Servis i nadogradnja postojećih sistema",
+        "Ugradnja senzora, aktuatora i nadzornih sistema",
+        "Razvoj pametnih uređaja (IoT)"
+      ],
+      projekti: [
+        ["Pametni sistem rasvjete", "Razvijen sistem za automatsko upravljanje rasvjetom u poslovnim prostorima putem senzora pokreta i svjetla."],
+        ["Detekcija gasova u industriji", "Sonda za nadzor kvaliteta zraka i alarmni sistem integrisan sa centralnim nadzornim uređajem."],
+        ["Automatsko navodnjavanje", "Arduino sistem za nadzor vlage u tlu i automatsko pokretanje pumpi za navodnjavanje vrtova i plastenika."]
+      ],
+      kontakt: "Pošaljite nam poruku putem forme ispod ili direktno na e-mail: halilovicnusret8@gmail.com"
+    },
+    en: {
+      naslov: "Arduino & Automation Projects",
+      podnaslov: "Professional programming, design and implementation of automated systems – from idea to final solution.",
+      saznajvise: "Learn more",
+      nav: ["About Us", "Services", "Projects", "Contact"],
+      onama: [
+        "Our team brings together experts in electronics, mechatronics, automation and programming who share a passion for modern technology.",
+        "We focus on practical and reliable solutions — whether it’s motor control, lighting automation, environmental monitoring or process supervision.",
+        "Our vision is to make automation affordable and accessible for everyone."
+      ],
+      usluge: "We offer a wide range of professional services in automation and electronics:",
+      lista: [
+        "Programming Arduino and PLC controllers",
+        "Design and production of electronic boards and systems",
+        "Automation of home and industrial processes",
+        "Maintenance and upgrades of existing systems",
+        "Installation of sensors, actuators and monitoring systems",
+        "Development of smart IoT devices"
+      ],
+      projekti: [
+        ["Smart lighting system", "Developed a system for automatic lighting control in offices using motion and light sensors."],
+        ["Industrial gas detection", "Air quality monitoring probe and alarm system integrated with a central control unit."],
+        ["Automatic irrigation", "Arduino system for soil moisture monitoring and automatic water pump control for gardens."]
+      ],
+      kontakt: "Send us a message using the form below or directly to: halilovicnusret8@gmail.com"
+    },
+    de: {
+      naslov: "Arduino & Automatisierungsprojekte",
+      podnaslov: "Professionelle Programmierung, Planung und Umsetzung von Automatisierungssystemen – von der Idee bis zur fertigen Lösung.",
+      saznajvise: "Mehr erfahren",
+      nav: ["Über uns", "Dienstleistungen", "Projekte", "Kontakt"],
+      onama: [
+        "Unser Team vereint Experten aus den Bereichen Elektronik, Mechatronik, Automatisierung und Programmierung mit einer Leidenschaft für moderne Technologien.",
+        "Wir konzentrieren uns auf praktische und zuverlässige Lösungen – ob Motorsteuerung, Lichtautomatisierung, Umweltüberwachung oder Prozesskontrolle.",
+        "Unsere Vision ist es, Automatisierung zugänglich und erschwinglich zu machen."
+      ],
+      usluge: "Wir bieten ein breites Spektrum professioneller Dienstleistungen im Bereich Automatisierung und Elektronik an:",
+      lista: [
+        "Programmierung von Arduino- und SPS-Steuerungen",
+        "Entwurf und Herstellung elektronischer Systeme",
+        "Automatisierung von Haus- und Industrieprozessen",
+        "Wartung und Modernisierung bestehender Systeme",
+        "Installation von Sensoren, Aktoren und Überwachungssystemen",
+        "Entwicklung intelligenter IoT-Geräte"
+      ],
+      projekti: [
+        ["Intelligentes Beleuchtungssystem", "System zur automatischen Steuerung der Beleuchtung in Büros mit Bewegungs- und Lichtsensoren."],
+        ["Gasdetektion in der Industrie", "Luftqualitätsüberwachung und Alarmsystem, integriert in eine zentrale Steuereinheit."],
+        ["Automatische Bewässerung", "Arduino-System zur Bodenfeuchteüberwachung und automatischen Steuerung der Wasserpumpen."]
+      ],
+      kontakt: "Senden Sie uns eine Nachricht über das Formular unten oder direkt an: halilovicnusret8@gmail.com"
+    }
+  }[jezik];
+
+  document.getElementById("naslov").innerText = t.naslov;
+  document.getElementById("podnaslov").innerText = t.podnaslov;
+  document.getElementById("saznajvise").innerText = t.saznajvise;
+  document.getElementById("nav-onama").innerText = t.nav[0];
+  document.getElementById("nav-usluge").innerText = t.nav[1];
+  document.getElementById("nav-projekti").innerText = t.nav[2];
+  document.getElementById("nav-kontakt").innerText = t.nav[3];
+  document.getElementById("onama-tekst1").innerText = t.onama[0];
+  document.getElementById("onama-tekst2").innerText = t.onama[1];
+  document.getElementById("onama-tekst3").innerText = t.onama[2];
+  document.getElementById("usluge-tekst").innerText = t.usluge;
+  document.getElementById("lista-usluga").innerHTML = t.lista.map(li => `<li>${li}</li>`).join("");
+  document.getElementById("proj1-naslov").innerText = t.projekti[0][0];
+  document.getElementById("proj1-tekst").innerText = t.projekti[0][1];
+  document.getElementById("proj2-naslov").innerText = t.projekti[1][0];
+  document.getElementById("proj2-tekst").innerText = t.projekti[1][1];
+  document.getElementById("proj3-naslov").innerText = t.projekti[2][0];
+  document.getElementById("proj3-tekst").innerText = t.projekti[2][1];
+  document.getElementById("kontakt-tekst").innerText = t.kontakt;
+}
+</script>
 
 </body>
 </html>
