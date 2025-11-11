@@ -1,104 +1,145 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatika Pro – Arduino Projekti i Automatizacija</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #1e1e1e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    #o-nama {
+      background-color: #f5f5f5;
+    }
+    #usluge {
+      background-color: #fff;
+    }
+    #projekti {
+      background-color: #f5f5f5;
+    }
+    #kontakt {
+      background-color: #fff;
+    }
+    .projekti-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .projekat {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .projekat img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    footer {
+      background: #1e1e1e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      max-width: 640px;
+      height: 800px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Automatika Pro</h1>
+    <p>Arduino projekti, automatizacija i prodaja komponenti</p>
+    <nav>
+      <a href="#o-nama">O nama</a>
+      <a href="#usluge">Usluge</a>
+      <a href="#projekti">Projekti</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
 
-  <!-- Početna -->
-  <url>
-    <loc>http://automatika-pro.site/#pocetna</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <section id="o-nama">
+    <h2>O nama</h2>
+    <p>Automatika Pro nudi rješenja iz oblasti Arduino projekata, elektronike i automatizacije.
+      Naš tim razvija inovativne sisteme koji pomažu u optimizaciji rada postrojenja i industrijskih sistema.</p>
+  </section>
 
-  <!-- O nama -->
-  <url>
-    <loc>http://automatika-pro.site/#o-nama</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <section id="usluge">
+    <h2>Usluge</h2>
+    <p>Specijalizovani smo za sljedeće usluge:</p>
+    <ul style="list-style:none; padding:20px; text-align:left; display:inline-block;">
+      <li>✔ Projektovanje Arduino sistema</li>
+      <li>✔ Automatizacija postrojenja</li>
+      <li>✔ Savjetovanje i tehnička podrška</li>
+      <li>✔ Prodaja Arduino komponenti</li>
+    </ul>
+  </section>
 
-  <!-- Usluge -->
-  <url>
-    <loc>http://automatika-pro.site/#usluge</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <section id="projekti">
+    <h2>Naši projekti</h2>
+    <div class="projekti-grid">
+      <div class="projekat">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" alt="Arduino projekat" />
+        <h3>Automatizacija pomoću senzora</h3>
+        <p>Sistem za automatsku detekciju i upravljanje pomoću Arduino senzora.</p>
+      </div>
+      <div class="projekat">
+        <img src="https://cdn.sparkfun.com/assets/home_page_posts/2/8/5/5/Arduino_Uno_-_R3.jpg" alt="Arduino UNO" />
+        <h3>Arduino kontrola motora</h3>
+        <p>Projekat koji omogućava preciznu kontrolu brzine i smjera rotacije motora.</p>
+      </div>
+      <div class="projekat">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Arduino_Mega_2560.jpg" alt="Arduino Mega" />
+        <h3>Automatizacija ventilacije</h3>
+        <p>Upravljanje ventilatorima i temperaturama u industrijskim prostorima.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Projekti -->
-  <url>
-    <loc>http://automatika-pro.site/#projekti</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <section id="kontakt">
+    <h2>Kontaktirajte nas</h2>
+    <p>Imate pitanje ili trebate Arduino rješenje? Pošaljite poruku putem obrasca ispod.</p>
+    <div style="display:flex; justify-content:center; padding:20px;">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdJriMF3ddcAEXz13TeoZLMl_1QHJGsRrbBngiZREUbQuyKxA/viewform?embedded=true"
+        allowfullscreen>
+        Učitavanje…
+      </iframe>
+    </div>
+  </section>
 
-  <!-- Pojedinačni projekti -->
-  <url>
-    <loc>http://automatika-pro.site/#projekat-navodnjavanje</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://automatika-pro.site/#projekat-detektor-plina</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://automatika-pro.site/#projekat-osvjetljenje</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Prodaja dijelova -->
-  <url>
-    <loc>http://automatika-pro.site/#dijelovi</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Recenzije -->
-  <url>
-    <loc>http://automatika-pro.site/#recenzije</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Kontakt -->
-  <url>
-    <loc>http://automatika-pro.site/#kontakt</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-</urlset>
-  </url>
-  <url>
-    <loc>https://automatika-pro.site/#projekat-detektor-plina</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://automatika-pro.site/#projekat-osvjetljenje</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Sekcija Prodaja dijelova -->
-  <url>
-    <loc>https://automatika-pro.site/#dijelovi</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Sekcija Recenzije -->
-  <url>
-    <loc>https://automatika-pro.site/#recenzije</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Sekcija Kontakt -->
-  <url>
-    <loc>https://automatika-pro.site/#kontakt</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-</urlset>
+  <footer>
+    <p>© 2025 Automatika Pro | Kontakt: halilovicnusret8@gmail.com</p>
+  </footer>
+</body>
+</html>
