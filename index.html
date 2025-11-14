@@ -1,103 +1,267 @@
-const t = {
-  bs: {
-    naslov:"Automatika PRO – Industrijska rješenja",
-    podnaslov:"Profesionalno programiranje, projektovanje i izrada automatizovanih sistema – od ideje do gotovog rješenja.",
-    saznajvise:"Saznaj više",
-    nav:["O nama","Usluge","Projekti","Kontakt"],
-    onama:[
-      "Naš tim čine inženjeri i tehničari s bogatim iskustvom iz oblasti automatike, mehatronike, elektronike i programiranja. Kombinacijom znanja i inovativnog pristupa, razvijamo rješenja koja povezuju teoriju i praksu.",
-      "Bavimo se razvojem, projektovanjem i implementacijom automatizovanih sistema za kućnu i industrijsku primjenu – od jednostavnih kontrolera do kompleksnih IoT sistema. Posebnu pažnju posvećujemo preciznosti, pouzdanosti i energetskoj efikasnosti svakog projekta.",
-      "Naš cilj je da tehnologiju približimo svima: optimizacija proizvodnih procesa, pametna rasvjeta, sistemi za nadzor okoline ili edukativni projekti.",
-      "Pored tehničke ekspertize, posebno naglašavamo individualni pristup svakom klijentu i stalno unapređenje i inovaciju kako bi sistemi bili sigurni, pouzdani i dugoročno održivi."
-    ],
-    usluge:"Naša ponuda obuhvata kompletne usluge iz oblasti automatizacije, elektronike i tehničkog razvoja:",
-    lista:[
-      "Programiranje i konfiguracija Arduino, ESP32 i PLC kontrolera",
-      "Izrada elektronskih ploča i razvoj prilagođenih modula po zahtjevu klijenta",
-      "Projektovanje i implementacija sistema za automatizaciju u industriji i domaćinstvima",
-      "Integracija senzora, aktuatora, motora i upravljačkih komponenti",
-      "Modernizacija i servis postojećih automatizovanih sistema",
-      "Razvoj pametnih IoT uređaja i bežičnih sistema za nadzor i kontrolu",
-      "Izrada edukativnih i demonstracionih projekata za škole i tehničke fakultete"
-    ],
-    uslugeDodatno:"Svaki projekt realizujemo od ideje, preko prototipa, testiranja, do implementacije gotovog rješenja. Klijenti dobijaju dokumentaciju i tehničku podršku tokom cijelog životnog ciklusa sistema.",
-    projekti:[
-      ["Pametni sistem rasvjete","Napredni sistem koji automatski reguliše intenzitet i vrijeme rada rasvjete pomoću senzora pokreta i svjetlosti, uz daljinsko upravljanje putem mobilne aplikacije."],
-      ["Industrijski sistem za detekciju gasova","Sofisticirani uređaj za nadzor kvaliteta zraka u proizvodnim pogonima, sa zvučnim i vizuelnim alarmom i povezivanjem na centralni SCADA sistem."],
-      ["Automatsko navodnjavanje","IoT sistem koji mjeri vlagu tla i upravlja pumpama za zalijevanje u realnom vremenu, optimizujući potrošnju vode i efikasnost."]
-    ],
-    recenzije:[
-      ["Automatika PRO je našoj firmi omogućila potpuno automatizovanje proizvodnog procesa. Efikasnost i preciznost sistema su impresivni!","- Marko K., direktor proizvodnje"],
-      ["Tim je profesionalan, kreativan i uvijek dostupan za konsultacije. Preporučujemo njihove usluge.","- Ana S., projekt menadžer"],
-      ["Pametni sistem rasvjete značajno je smanjio potrošnju energije i olakšao upravljanje prostorom.","- Ivan T., vlasnik kompanije"]
-    ]
-  },
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatika PRO – Industrijska rješenja</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+  body { font-family: Arial, sans-serif; color:#222; background-color:#f5f5f5; }
 
-  en: {
-    naslov:"Automatika PRO – Industrial Solutions",
-    podnaslov:"Professional programming, design and implementation of automated systems – from idea to final solution.",
-    saznajvise:"Learn more",
-    nav:["About Us","Services","Projects","Contact"],
-    onama:[
-      "Our team consists of engineers and technicians with extensive experience in automation, mechatronics, electronics, and software development. Combining technical expertise with innovative thinking, we deliver solutions that bridge theory and real-world application.",
-      "We specialize in the design and implementation of automated systems for industrial and residential use – from simple controllers to complex IoT solutions. We emphasize precision, reliability, and energy efficiency in every project.",
-      "Our mission is to make technology accessible to everyone: optimizing production processes, smart lighting, environmental monitoring, and educational projects.",
-      "Beyond technical expertise, we focus on individualized client solutions. Our philosophy is continuous improvement and innovation to ensure systems are safe, reliable, and sustainable."
-    ],
-    usluge:"We provide comprehensive engineering and automation services tailored to your needs:",
-    lista:[
-      "Programming and configuration of Arduino, ESP32, and PLC controllers",
-      "Design and development of custom electronic boards and modules",
-      "Automation of industrial and home processes",
-      "Integration of sensors, actuators, motors, and control systems",
-      "Upgrades and maintenance of existing automated systems",
-      "Development of smart IoT devices and wireless monitoring systems",
-      "Educational and demonstration projects for schools and technical universities"
-    ],
-    uslugeDodatno:"Each project is executed from concept, prototype, testing to final implementation. Clients receive documentation and technical support throughout the system lifecycle.",
-    projekti:[
-      ["Smart Lighting System","An advanced system that automatically regulates light intensity and operation time using motion and light sensors, with remote control via mobile app."],
-      ["Industrial Gas Detection System","Sophisticated device for air quality monitoring in production facilities, with audio-visual alarms and central SCADA connectivity."],
-      ["Automatic Irrigation System","IoT system measuring soil moisture and controlling pumps in real-time, optimizing water usage and efficiency."]
-    ],
-    recenzije:[
-      ["Automatika PRO allowed our company to fully automate our production process. Efficiency and precision are impressive!","- Mark K., Production Director"],
-      ["The team is professional, creative, and always available for consultations. We recommend their services.","- Anna S., Project Manager"],
-      ["The smart lighting system significantly reduced energy consumption and made space management easier.","- Ivan T., Company Owner"]
-    ]
-  },
-
-  de: {
-    naslov:"Automatika PRO – Industrielle Lösungen",
-    podnaslov:"Professionelle Programmierung, Planung und Umsetzung von Automatisierungssystemen – von der Idee bis zur fertigen Lösung.",
-    saznajvise:"Mehr erfahren",
-    nav:["Über uns","Dienstleistungen","Projekte","Kontakt"],
-    onama:[
-      "Unser Team besteht aus Ingenieuren und Technikern mit umfangreicher Erfahrung in Automatisierung, Mechatronik, Elektronik und Softwareentwicklung. Wir liefern Lösungen, die Theorie und Praxis verbinden.",
-      "Wir sind spezialisiert auf die Entwicklung und Umsetzung von Automatisierungssystemen für Industrie und Haushalt – von einfachen Steuerungen bis zu komplexen IoT-Lösungen.",
-      "Unsere Mission ist es, Technologie für alle zugänglich zu machen: Optimierung von Produktionsprozessen, intelligente Beleuchtung, Umweltüberwachung und Bildungsprojekte.",
-      "Neben technischer Expertise konzentrieren wir uns auf individuelle Lösungen für jeden Kunden. Unsere Philosophie ist kontinuierliche Verbesserung und Innovation, um Systeme sicher, zuverlässig und nachhaltig zu gestalten."
-    ],
-    usluge:"Wir bieten umfassende Dienstleistungen im Bereich Engineering und Automatisierung an:",
-    lista:[
-      "Programmierung und Konfiguration von Arduino-, ESP32- und SPS-Steuerungen",
-      "Entwicklung und Herstellung maßgeschneiderter elektronischer Platinen und Module",
-      "Automatisierung von Industrie- und Hausprozessen",
-      "Integration von Sensoren, Aktoren, Motoren und Steuerungssystemen",
-      "Modernisierung und Wartung bestehender Automatisierungssysteme",
-      "Entwicklung intelligenter IoT-Geräte und drahtloser Überwachungssysteme",
-      "Bildungs- und Demonstrationsprojekte für Schulen und technische Hochschulen"
-    ],
-    uslugeDodatno:"Jedes Projekt wird von der Idee über Prototyping und Test bis zur finalen Implementierung durchgeführt. Kunden erhalten Dokumentation und technischen Support während des gesamten Systemlebenszyklus.",
-    projekti:[
-      ["Intelligentes Beleuchtungssystem","Fortgeschrittenes System zur automatischen Regelung der Lichtintensität und Betriebszeit mit Bewegungs- und Lichtsensoren, steuerbar über mobile App."],
-      ["Industrie-Gasdetektionssystem","Spezialisiertes Gerät zur Überwachung der Luftqualität in Produktionsstätten, mit akustischen und visuellen Alarmen und Anbindung an ein zentrales SCADA-System."],
-      ["Automatisches Bewässerungssystem","IoT-System, das die Bodenfeuchtigkeit misst und Pumpen in Echtzeit steuert, um Wasserverbrauch und Effizienz zu optimieren."]
-    ],
-    recenzije:[
-      ["Automatika PRO ermöglichte es unserem Unternehmen, den Produktionsprozess vollständig zu automatisieren. Effizienz und Präzision sind beeindruckend!","- Mark K., Produktionsleiter"],
-      ["Das Team ist professionell, kreativ und immer für Beratungen verfügbar. Wir empfehlen ihre Dienstleistungen.","- Anna S., Projektleiterin"],
-      ["Das intelligente Beleuchtungssystem hat den Energieverbrauch erheblich reduziert und die Raumnutzung erleichtert.","- Ivan T., Firmeninhaber"]
-    ]
+  header {
+    background-image: url('mca.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 150px 20px 100px;
   }
-};
+  header::after {
+    content:""; position:absolute; top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.4);
+    pointer-events:none;
+  }
+  header h1, header p, header a { position:relative; z-index:2; }
+  header h1 { font-size:2.5em; margin-bottom:10px; }
+  header p { font-size:1.2em; margin-bottom:20px; }
+  header a {
+    background:#ffcc00; color:#000; padding:10px 20px; text-decoration:none;
+    border-radius:5px; font-weight:bold;
+  }
+
+  nav { display:flex; justify-content:center; gap:20px; background:#003366; padding:15px; flex-wrap:wrap; }
+  nav a { color:white; text-decoration:none; font-weight:bold; transition: color 0.3s; }
+  nav a:hover { color:#ffcc00; }
+
+  .lang-switch { display:flex; justify-content:center; gap:10px; background:#f0f0f0; padding:10px; font-weight:bold; }
+  .lang-switch button {
+    background:#003366; color:white; border:none; border-radius:5px;
+    padding:6px 12px; cursor:pointer;
+  }
+  .lang-switch button:hover { background:#0059b3; }
+
+  section {
+    padding:60px 20px; background:white; margin:20px auto; max-width:1000px;
+    border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  }
+  h2 { color:#003366; margin-bottom:15px; }
+  p { line-height:1.6; margin-bottom:20px; }
+  ul { margin-left:20px; margin-bottom:20px; }
+  li { margin-bottom:10px; }
+
+  .projekti-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+  .projekat { background:#f0f8ff; border-radius:10px; padding:15px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
+  .projekat h3 { color:#0059b3; margin-bottom:10px; }
+
+  .galerija {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+  }
+  .galerija-item {
+    background: #f0f8ff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .galerija-item img {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .galerija-item:hover {
+    transform: scale(1.03);
+  }
+  .galerija-item p {
+    padding: 10px;
+    font-size: 0.9em;
+    color: #003366;
+    line-height: 1.4;
+  }
+
+  form { display:flex; flex-direction:column; gap:10px; max-width:500px; margin:auto; }
+  input, textarea, button { padding:10px; border-radius:5px; border:1px solid #ccc; font-size:1em; }
+  button { background:#003366; color:white; font-weight:bold; border:none; cursor:pointer; }
+  button:hover { background:#0059b3; }
+
+  .btn-back { display:inline-block; background:#003366; color:white; padding:10px 15px; text-decoration:none; border-radius:5px; }
+  .btn-back:hover { background:#0059b3; }
+
+  .recenzija { background:#f0f8ff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
+  .recenzija p { font-style: italic; }
+  .recenzija span { display:block; margin-top:5px; font-weight:bold; color:#0059b3; }
+
+  @media(max-width:768px) {
+    header h1 { font-size:2em; }
+    header p { font-size:1em; }
+  }
+</style>
+</head>
+<body>
+
+<header id="pocetna">
+  <h1 id="naslov">Automatika PRO – Industrijska rješenja</h1>
+  <p id="podnaslov">Profesionalno programiranje, projektovanje i izrada automatizovanih sistema – od ideje do gotovog rješenja.</p>
+  <a href="#o-nama" id="saznajvise">Saznaj više</a>
+</header>
+
+<div class="lang-switch">
+  <button onclick="postaviJezik('bs')">BS</button>
+  <button onclick="postaviJezik('en')">EN</button>
+  <button onclick="postaviJezik('de')">DE</button>
+</div>
+
+<nav>
+  <a href="#o-nama" id="nav-onama">O nama</a>
+  <a href="#usluge" id="nav-usluge">Usluge</a>
+  <a href="#projekti" id="nav-projekti">Projekti</a>
+  <a href="#kontakt" id="nav-kontakt">Kontakt</a>
+</nav>
+
+<section id="o-nama">
+  <h2 id="onama-naslov">O nama</h2>
+  <p id="onama-tekst1"></p>
+  <p id="onama-tekst2"></p>
+  <p id="onama-tekst3"></p>
+  <p id="onama-tekst4"></p>
+  <a class="btn-back" href="#pocetna">Nazad na početak</a>
+</section>
+
+<section id="usluge">
+  <h2 id="usluge-naslov">Usluge</h2>
+  <p id="usluge-tekst"></p>
+  <ul id="lista-usluga"></ul>
+  <p id="usluge-dodatno"></p>
+  <a class="btn-back" href="#pocetna">Nazad na početak</a>
+</section>
+
+<section id="projekti">
+  <h2 id="projekti-naslov">Projekti</h2>
+  <div class="projekti-grid">
+    <div class="projekat">
+      <h3 id="proj1-naslov"></h3>
+      <p id="proj1-tekst"></p>
+    </div>
+    <div class="projekat">
+      <h3 id="proj2-naslov"></h3>
+      <p id="proj2-tekst"></p>
+    </div>
+    <div class="projekat">
+      <h3 id="proj3-naslov"></h3>
+      <p id="proj3-tekst"></p>
+    </div>
+  </div>
+
+  <div class="galerija">
+    <div class="galerija-item">
+      <img src="projekat1.jpg" alt="Pametni sistem rasvjete">
+      <p>Pametni sistem rasvjete – automatska regulacija intenziteta i rada svjetala.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat2.jpg" alt="Industrijski sistem za detekciju gasova">
+      <p>Industrijski sistem za detekciju gasova – nadzor kvaliteta zraka u proizvodnji.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat3.jpg" alt="Automatsko navodnjavanje">
+      <p>Automatsko navodnjavanje – IoT sistem za kontrolu vlage tla i pumpi.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat4.jpg" alt="Industrijski PLC kontroler">
+      <p>Industrijski PLC kontroler – kontrola i nadzor proizvodnih linija.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat5.jpg" alt="Robotika u proizvodnji">
+      <p>Robotika u proizvodnji – automatizovani roboti za sklapanje i pakovanje.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat6.jpg" alt="IoT pametna kuća">
+      <p>IoT pametna kuća – kontrola rasvjete, grijanja i sigurnosti putem mobilne aplikacije.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat7.jpg" alt="Automatizacija proizvodnog procesa">
+      <p>Automatizacija proizvodnog procesa – optimizacija protoka i smanjenje grešaka.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat8.jpg" alt="Senzorski sistem nadzora">
+      <p>Senzorski sistem nadzora – detekcija temperature, vlažnosti i pokreta.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat9.jpg" alt="Elektronske ploče i moduli">
+      <p>Elektronske ploče i moduli – izrada po specifikacijama klijenata.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat10.jpg" alt="Testiranje i kalibracija sistema">
+      <p>Testiranje i kalibracija sistema – osiguranje maksimalne preciznosti i sigurnosti.</p>
+    </div>
+  </div>
+
+  <a class="btn-back" href="#pocetna">Nazad na početak</a>
+</section>
+
+<section id="recenzije">
+  <h2>Recenzije klijenata</h2>
+  <div id="rec1" class="recenzija"></div>
+  <div id="rec2" class="recenzija"></div>
+  <div id="rec3" class="recenzija"></div>
+</section>
+
+<section id="kontakt">
+  <h2 id="kontakt-naslov">Kontakt</h2>
+  <p id="kontakt-tekst"></p>
+  <form action="https://formspree.io/f/mayvlbqk" method="POST">
+    <input type="text" name="ime" placeholder="Vaše ime" required>
+    <input type="email" name="email" placeholder="Vaš e-mail" required>
+    <textarea name="poruka" placeholder="Unesite vašu poruku..." required></textarea>
+    <button type="submit">Pošalji poruku</button>
+  </form>
+</section>
+
+<script>
+const t = { /* Ovdje ide JS objekat koji sam ti poslao u prethodnom odgovoru za sva tri jezika sa tekstovima, projektima i recenzijama */ };
+
+// Funkcija za promjenu jezika
+function postaviJezik(lang){
+  document.getElementById("naslov").innerText=t[lang].naslov;
+  document.getElementById("podnaslov").innerText=t[lang].podnaslov;
+  document.getElementById("saznajvise").innerText=t[lang].saznajvise;
+
+  document.getElementById("nav-onama").innerText=t[lang].nav[0];
+  document.getElementById("nav-usluge").innerText=t[lang].nav[1];
+  document.getElementById("nav-projekti").innerText=t[lang].nav[2];
+  document.getElementById("nav-kontakt").innerText=t[lang].nav[3];
+
+  document.getElementById("onama-tekst1").innerText=t[lang].onama[0];
+  document.getElementById("onama-tekst2").innerText=t[lang].onama[1];
+  document.getElementById("onama-tekst3").innerText=t[lang].onama[2];
+  document.getElementById("onama-tekst4").innerText=t[lang].onama[3];
+
+  document.getElementById("usluge-tekst").innerText=t[lang].usluge;
+  document.getElementById("lista-usluga").innerHTML=t[lang].lista.map(li=>`<li>${li}</li>`).join("");
+  document.getElementById("usluge-dodatno").innerText=t[lang].uslugeDodatno;
+
+  document.getElementById("proj1-naslov").innerText=t[lang].projekti[0][0];
+  document.getElementById("proj1-tekst").innerText=t[lang].projekti[0][1];
+  document.getElementById("proj2-naslov").innerText=t[lang].projekti[1][0];
+  document.getElementById("proj2-tekst").innerText=t[lang].projekti[1][1];
+  document.getElementById("proj3-naslov").innerText=t[lang].projekti[2][0];
+  document.getElementById("proj3-tekst").innerText=t[lang].projekti[2][1];
+
+  document.getElementById("rec1").innerHTML = `<p>"${t[lang].recenzije[0][0]}"</p><span>${t[lang].recenzije[0][1]}</span>`;
+  document.getElementById("rec2").innerHTML = `<p>"${t[lang].recenzije[1][0]}"</p><span>${t[lang].recenzije[1][1]}</span>`;
+  document.getElementById("rec3").innerHTML = `<p>"${t[lang].recenzije[2][0]}"</p><span>${t[lang].recenzije[2][1]}</span>`;
+
+  document.getElementById("kontakt-tekst").innerText=t[lang].contact || t[lang].kontakt;
+}
+
+// Postavi default jezik
+postaviJezik('bs');
+</script>
+
+</body>
+</html>
