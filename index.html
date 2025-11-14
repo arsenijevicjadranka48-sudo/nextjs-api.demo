@@ -44,10 +44,6 @@
   ul { margin-left:20px; margin-bottom:20px; }
   li { margin-bottom:10px; }
 
-  .projekti-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-  .projekat { background:#f0f8ff; border-radius:10px; padding:15px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
-  .projekat h3 { color:#0059b3; margin-bottom:10px; }
-
   .galerija {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -76,9 +72,6 @@
   button { background:#003366; color:white; font-weight:bold; border:none; cursor:pointer; }
   button:hover { background:#0059b3; }
 
-  .btn-back { display:inline-block; background:#003366; color:white; padding:10px 15px; text-decoration:none; border-radius:5px; }
-  .btn-back:hover { background:#0059b3; }
-
   .recenzija { background:#f0f8ff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
   .recenzija p { font-style: italic; }
   .recenzija span { display:block; margin-top:5px; font-weight:bold; color:#0059b3; }
@@ -104,9 +97,9 @@
   <p class="lang lang-en">Professional programming, design, and implementation of automated systems – from concept to finished solution.</p>
   <p class="lang lang-de">Professionelle Programmierung, Planung und Umsetzung automatisierter Systeme – von der Idee bis zur fertigen Lösung.</p>
 
-  <a href="#o-nama" class="lang lang-bs">Saznaj više</a>
-  <a href="#o-nama" class="lang lang-en">Learn more</a>
-  <a href="#o-nama" class="lang lang-de">Mehr erfahren</a>
+  <a href="#projekti" class="lang lang-bs">Saznaj više</a>
+  <a href="#projekti" class="lang lang-en">Learn more</a>
+  <a href="#projekti" class="lang lang-de">Mehr erfahren</a>
 </header>
 
 <nav>
@@ -115,85 +108,50 @@
   <a onclick="setLang('de')">DE</a>
 </nav>
 
-<section id="o-nama">
-  <h2 class="lang lang-bs">O nama</h2>
-  <h2 class="lang lang-en">About Us</h2>
-  <h2 class="lang lang-de">Über uns</h2>
-
-  <p class="lang lang-bs">Naš tim čine inženjeri i tehničari s bogatim iskustvom iz oblasti automatike, mehatronike, elektronike i programiranja.</p>
-  <p class="lang lang-en">Our team consists of engineers and technicians with extensive experience in automation, mechatronics, electronics, and programming.</p>
-  <p class="lang lang-de">Unser Team besteht aus Ingenieuren und Technikern mit umfangreicher Erfahrung in Automatisierung, Mechatronik, Elektronik und Programmierung.</p>
-</section>
-
 <section id="projekti">
   <h2 class="lang lang-bs">Projekti</h2>
   <h2 class="lang lang-en">Projects</h2>
   <h2 class="lang lang-de">Projekte</h2>
 
   <div class="galerija">
-    <!-- Generišemo 10 slika -->
-    <div class="galerija-item">
-      <img src="projekat1.jpg" alt="Projekat 1">
-      <p class="lang lang-bs">Projekat 1 – opis na bosanskom.</p>
-      <p class="lang lang-en">Project 1 – description in English.</p>
-      <p class="lang lang-de">Projekt 1 – Beschreibung auf Deutsch.</p>
-    </div>
-    <div class="galerija-item">
-      <img src="projekat2.jpg" alt="Projekat 2">
-      <p class="lang lang-bs">Projekat 2 – opis na bosanskom.</p>
-      <p class="lang lang-en">Project 2 – description in English.</p>
-      <p class="lang lang-de">Projekt 2 – Beschreibung auf Deutsch.</p>
-    </div>
-    <!-- Dodaj ostale slike do 10 -->
-    <div class="galerija-item">
-      <img src="projekat3.jpg" alt="Projekat 3">
-      <p class="lang lang-bs">Projekat 3 – opis na bosanskom.</p>
-      <p class="lang lang-en">Project 3 – description in English.</p>
-      <p class="lang lang-de">Projekt 3 – Beschreibung auf Deutsch.</p>
-    </div>
-    <div class="galerija-item">
-      <img src="projekat4.jpg" alt="Projekat 4">
-      <p class="lang lang-bs">Projekat 4 – opis na bosanskom.</p>
-      <p class="lang lang-en">Project 4 – description in English.</p>
-      <p class="lang lang-de">Projekt 4 – Beschreibung auf Deutsch.</p>
-    </div>
-    <div class="galerija-item">
-      <img src="projekat5.jpg" alt="Projekat 5">
-      <p class="lang lang-bs">Projekat 5 – opis na bosanskom.</p>
-      <p class="lang lang-en">Project 5 – description in English.</p>
-      <p class="lang lang-de">Projekt 5 – Beschreibung auf Deutsch.</p>
-    </div>
-    <div class="galerija-item">
-      <img src="projekat6.jpg" alt="Projekat 6">
-      <p class="lang lang-bs">Projekat 6 – opis na bosanskom.</p>
-      <p class="lang lang-en">Project 6 – description in English.</p>
-      <p class="lang lang-de">Projekt 6 – Beschreibung auf Deutsch.</p>
-    </div>
-    <div class="galerija-item">
-      <img src="projekat7.jpg" alt="Projekat 7">
-      <p class="lang lang-bs">Projekat 7 – opis na bosanskom.</p>
-      <p class="lang lang-en">Project 7 – description in English.</p>
-      <p class="lang lang-de">Projekt 7 – Beschreibung auf Deutsch.</p>
-    </div>
-    <div class="galerija-item">
-      <img src="projekat8.jpg" alt="Projekat 8">
-      <p class="lang lang-bs">Projekat 8 – opis na bosanskom.</p>
-      <p class="lang lang-en">Project 8 – description in English.</p>
-      <p class="lang lang-de">Projekt 8 – Beschreibung auf Deutsch.</p>
-    </div>
-    <div class="galerija-item">
-      <img src="projekat9.jpg" alt="Projekat 9">
-      <p class="lang lang-bs">Projekat 9 – opis na bosanskom.</p>
-      <p class="lang lang-en">Project 9 – description in English.</p>
-      <p class="lang lang-de">Projekt 9 – Beschreibung auf Deutsch.</p>
-    </div>
-    <div class="galerija-item">
-      <img src="projekat10.jpg" alt="Projekat 10">
-      <p class="lang lang-bs">Projekat 10 – opis na bosanskom.</p>
-      <p class="lang lang-en">Project 10 – description in English.</p>
-      <p class="lang lang-de">Projekt 10 – Beschreibung auf Deutsch.</p>
-    </div>
+    <!-- 10 galerijskih slika -->
+    <script>
+      for(let i=1;i<=10;i++){
+        document.write(`
+        <div class="galerija-item">
+          <img src="projekat${i}.jpg" alt="Projekat ${i}">
+          <p class="lang lang-bs">Projekat ${i} – opis na bosanskom.</p>
+          <p class="lang lang-en">Project ${i} – description in English.</p>
+          <p class="lang lang-de">Projekt ${i} – Beschreibung auf Deutsch.</p>
+        </div>
+        `);
+      }
+    </script>
   </div>
+</section>
+
+<section id="kontakt">
+  <h2 class="lang lang-bs">Kontakt</h2>
+  <h2 class="lang lang-en">Contact</h2>
+  <h2 class="lang lang-de">Kontakt</h2>
+
+  <form action="https://formspree.io/f/mayvlbqk" method="POST">
+    <input type="text" name="ime" placeholder="Vaše ime" class="lang lang-bs" required>
+    <input type="text" name="ime" placeholder="Your Name" class="lang lang-en" required>
+    <input type="text" name="ime" placeholder="Ihr Name" class="lang lang-de" required>
+
+    <input type="email" name="email" placeholder="Vaš e-mail" class="lang lang-bs" required>
+    <input type="email" name="email" placeholder="Your Email" class="lang lang-en" required>
+    <input type="email" name="email" placeholder="Ihre E-Mail" class="lang lang-de" required>
+
+    <textarea name="poruka" placeholder="Unesite vašu poruku..." class="lang lang-bs" required></textarea>
+    <textarea name="poruka" placeholder="Enter your message..." class="lang lang-en" required></textarea>
+    <textarea name="poruka" placeholder="Geben Sie Ihre Nachricht ein..." class="lang lang-de" required></textarea>
+
+    <button type="submit" class="lang lang-bs">Pošalji poruku</button>
+    <button type="submit" class="lang lang-en">Send Message</button>
+    <button type="submit" class="lang lang-de">Nachricht senden</button>
+  </form>
 </section>
 
 <script>
