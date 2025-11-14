@@ -11,85 +11,49 @@
   header {
     background-image: url('mca.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 400px; /* smanjena visina */
+    background-position: center;
+    height: 350px; /* smanjena visina */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-    text-align: center;
     position: relative;
+    text-align: center;
   }
   header::after {
     content:""; position:absolute; top:0; left:0; right:0; bottom:0;
     background: rgba(0,0,0,0.4);
-    pointer-events:none;
   }
-  header h1, header p, header a { position:relative; z-index:2; }
-  header h1 { font-size:2.5em; margin-bottom:10px; }
-  header p { font-size:1.2em; margin-bottom:20px; }
-  header a {
-    background:#ffcc00; color:#000; padding:10px 20px; text-decoration:none;
-    border-radius:5px; font-weight:bold;
-  }
+  header h1, header p, header a { position: relative; z-index: 2; }
+  header h1 { font-size: 2.5em; margin-bottom:10px; }
+  header p { font-size:1.2em; margin-bottom:15px; }
+  header a { background:#ffcc00; color:#000; padding:10px 20px; text-decoration:none; border-radius:5px; font-weight:bold; }
 
-  nav { display:flex; justify-content:center; gap:20px; background:#003366; padding:15px; flex-wrap:wrap; }
-  nav a { color:white; text-decoration:none; font-weight:bold; transition: color 0.3s; cursor:pointer; }
+  nav { display:flex; justify-content:center; gap:15px; background:#003366; padding:12px; flex-wrap:wrap; }
+  nav a { color:white; cursor:pointer; text-decoration:none; font-weight:bold; }
   nav a:hover { color:#ffcc00; }
 
-  section {
-    padding:60px 20px; background:white; margin:20px auto; max-width:1000px;
-    border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1);
-  }
+  section { padding:50px 20px; background:white; margin:20px auto; max-width:1000px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
   h2 { color:#003366; margin-bottom:15px; }
-  p { line-height:1.6; margin-bottom:20px; }
-  ul { margin-left:20px; margin-bottom:20px; }
-  li { margin-bottom:10px; }
+  p, li { margin-bottom:15px; line-height:1.6; }
+  ul { margin-left:20px; }
 
-  .projekti-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-  .projekat { background:#f0f8ff; border-radius:10px; padding:15px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
-  .projekat h3 { color:#0059b3; margin-bottom:10px; }
+  .galerija { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; margin-top:20px; }
+  .galerija-item { background:#f0f8ff; border-radius:10px; overflow:hidden; text-align:center; box-shadow:0 1px 5px rgba(0,0,0,0.1); transition: transform 0.3s; }
+  .galerija-item img { width:100%; display:block; cursor:pointer; transition:transform 0.3s; }
+  .galerija-item:hover { transform:scale(1.03); }
+  .galerija-item p { padding:10px; font-size:0.9em; color:#003366; }
 
-  .galerija {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-  }
-  .galerija-item {
-    background: #f0f8ff;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-  }
-  .galerija-item img {
-    width: 100%;
-    display: block;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  .galerija-item:hover { transform: scale(1.03); }
-  .galerija-item p { padding: 10px; font-size: 0.9em; color: #003366; line-height: 1.4; }
+  .recenzija { background:#f0f8ff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
+  .recenzija p { font-style:italic; }
+  .recenzija span { display:block; margin-top:5px; font-weight:bold; color:#0059b3; }
 
   form { display:flex; flex-direction:column; gap:10px; max-width:500px; margin:auto; }
   input, textarea, button { padding:10px; border-radius:5px; border:1px solid #ccc; font-size:1em; }
   button { background:#003366; color:white; font-weight:bold; border:none; cursor:pointer; }
   button:hover { background:#0059b3; }
 
-  .recenzija { background:#f0f8ff; padding:15px; border-radius:10px; margin-bottom:15px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
-  .recenzija p { font-style: italic; }
-  .recenzija span { display:block; margin-top:5px; font-weight:bold; color:#0059b3; }
-
-  @media(max-width:768px) {
-    header h1 { font-size:2em; }
-    header p { font-size:1em; }
-  }
-
-  /* Multijezični sadržaj */
   .lang { display:none; }
   .lang-bs { display:block; }
 </style>
@@ -116,16 +80,18 @@
   <a onclick="setLang('de')">DE</a>
 </nav>
 
+<!-- O nama -->
 <section id="o-nama">
   <h2 class="lang lang-bs">O nama</h2>
   <h2 class="lang lang-en">About Us</h2>
   <h2 class="lang lang-de">Über uns</h2>
 
-  <p class="lang lang-bs">Naš tim čine inženjeri i tehničari s bogatim iskustvom iz oblasti automatike, mehatronike, elektronike i programiranja. Razvijamo rješenja koja povezuju teoriju i praksu.</p>
-  <p class="lang lang-en">Our team consists of engineers and technicians with extensive experience in automation, mechatronics, electronics, and programming. We develop solutions that connect theory and practice.</p>
-  <p class="lang lang-de">Unser Team besteht aus Ingenieuren und Technikern mit umfangreicher Erfahrung in Automatisierung, Mechatronik, Elektronik und Programmierung. Wir entwickeln Lösungen, die Theorie und Praxis verbinden.</p>
+  <p class="lang lang-bs">Naš tim čine inženjeri i tehničari sa iskustvom u automatizaciji, mehatronici, elektronici i programiranju. Razvijamo rješenja koja povezuju teoriju i praksu.</p>
+  <p class="lang lang-en">Our team consists of engineers and technicians with experience in automation, mechatronics, electronics, and programming. We develop solutions that connect theory and practice.</p>
+  <p class="lang lang-de">Unser Team besteht aus Ingenieuren und Technikern mit Erfahrung in Automatisierung, Mechatronik, Elektronik und Programmierung. Wir entwickeln Lösungen, die Theorie und Praxis verbinden.</p>
 </section>
 
+<!-- Usluge -->
 <section id="usluge">
   <h2 class="lang lang-bs">Usluge</h2>
   <h2 class="lang lang-en">Services</h2>
@@ -133,58 +99,54 @@
 
   <ul class="lang lang-bs">
     <li>Programiranje i konfiguracija Arduino, ESP32 i PLC kontrolera</li>
-    <li>Izrada elektronskih ploča i razvoj prilagođenih modula po zahtjevu klijenta</li>
-    <li>Projektovanje i implementacija sistema za automatizaciju u industriji i domaćinstvima</li>
+    <li>Izrada elektronskih ploča i razvoj prilagođenih modula</li>
+    <li>Projektovanje i implementacija sistema za industriju i domaćinstva</li>
   </ul>
   <ul class="lang lang-en">
     <li>Programming and configuration of Arduino, ESP32, and PLC controllers</li>
-    <li>Creation of electronic boards and development of custom modules per client request</li>
-    <li>Design and implementation of automation systems for industry and homes</li>
+    <li>Creation of electronic boards and custom module development</li>
+    <li>Design and implementation of systems for industry and homes</li>
   </ul>
   <ul class="lang lang-de">
     <li>Programmierung und Konfiguration von Arduino-, ESP32- und PLC-Controllern</li>
-    <li>Erstellung von Leiterplatten und Entwicklung kundenspezifischer Module nach Kundenwunsch</li>
-    <li>Planung und Implementierung von Automatisierungssystemen für Industrie und Haushalte</li>
+    <li>Erstellung von Leiterplatten und Entwicklung kundenspezifischer Module</li>
+    <li>Planung und Implementierung von Systemen für Industrie und Haushalte</li>
   </ul>
 </section>
 
+<!-- Projekti / Galerija -->
 <section id="projekti">
   <h2 class="lang lang-bs">Projekti</h2>
   <h2 class="lang lang-en">Projects</h2>
   <h2 class="lang lang-de">Projekte</h2>
 
   <div class="galerija">
-    <!-- 10 galerijskih slika sa opisima -->
-    ${[...Array(10).keys()].map(i => `
-      <div class="galerija-item">
-        <img src="projekat${i+1}.jpg" alt="Projekat ${i+1}">
-        <p class="lang lang-bs">Projekat ${i+1} – detaljan opis projekta na bosanskom jeziku.</p>
-        <p class="lang lang-en">Project ${i+1} – detailed description in English.</p>
-        <p class="lang lang-de">Projekt ${i+1} – detaillierte Beschreibung auf Deutsch.</p>
-      </div>
-    `).join('')}
+    <!-- 10 slika ručno dodano -->
+    <div class="galerija-item"><img src="projekat1.jpg"><p class="lang lang-bs">Pametni sistem rasvjete</p><p class="lang lang-en">Smart lighting system</p><p class="lang lang-de">Intelligentes Beleuchtungssystem</p></div>
+    <div class="galerija-item"><img src="projekat2.jpg"><p class="lang lang-bs">Industrijski sistem detekcije gasova</p><p class="lang lang-en">Industrial gas detection system</p><p class="lang lang-de">Industrielles Gaserkennungssystem</p></div>
+    <div class="galerija-item"><img src="projekat3.jpg"><p class="lang lang-bs">Automatsko navodnjavanje</p><p class="lang lang-en">Automatic irrigation</p><p class="lang lang-de">Automatische Bewässerung</p></div>
+    <div class="galerija-item"><img src="projekat4.jpg"><p class="lang lang-bs">Kontrola pristupa</p><p class="lang lang-en">Access control system</p><p class="lang lang-de">Zugangskontrollsystem</p></div>
+    <div class="galerija-item"><img src="projekat5.jpg"><p class="lang lang-bs">SCADA nadzor</p><p class="lang lang-en">SCADA monitoring system</p><p class="lang lang-de">SCADA-Überwachungssystem</p></div>
+    <div class="galerija-item"><img src="projekat6.jpg"><p class="lang lang-bs">Solarni paneli na krovu</p><p class="lang lang-en">Solar roof panels</p><p class="lang lang-de">Solardachpaneele</p></div>
+    <div class="galerija-item"><img src="projekat7.jpg"><p class="lang lang-bs">Pametni termostat</p><p class="lang lang-en">Smart thermostat</p><p class="lang lang-de">Intelligentes Thermostat</p></div>
+    <div class="galerija-item"><img src="projekat8.jpg"><p class="lang lang-bs">IoT senzori</p><p class="lang lang-en">IoT sensors</p><p class="lang lang-de">IoT-Sensoren</p></div>
+    <div class="galerija-item"><img src="projekat9.jpg"><p class="lang lang-bs">Automatizacija proizvodnje</p><p class="lang lang-en">Production automation</p><p class="lang lang-de">Produktionsautomatisierung</p></div>
+    <div class="galerija-item"><img src="projekat10.jpg"><p class="lang lang-bs">Pametna rasvjeta u školi</p><p class="lang lang-en">Smart school lighting</p><p class="lang lang-de">Intelligente Schulbeleuchtung</p></div>
   </div>
 </section>
 
+<!-- Recenzije -->
 <section id="recenzije">
-  <h2 class="lang lang-bs">Recenzije klijenata</h2>
-  <h2 class="lang lang-en">Customer Reviews</h2>
-  <h2 class="lang lang-de">Kundenbewertungen</h2>
+  <h2 class="lang lang-bs">Recenzije</h2>
+  <h2 class="lang lang-en">Reviews</h2>
+  <h2 class="lang lang-de">Bewertungen</h2>
 
-  <div class="recenzija lang lang-bs">
-    <p>"Automatika PRO nam je omogućila potpuno automatizovanje proizvodnog procesa. Efikasnost i preciznost sistema su impresivni!"</p>
-    <span>- Marko K., direktor proizvodnje</span>
-  </div>
-  <div class="recenzija lang lang-en">
-    <p>"Automatika PRO enabled us to fully automate our production process. System efficiency and precision are impressive!"</p>
-    <span>- Marko K., Production Director</span>
-  </div>
-  <div class="recenzija lang lang-de">
-    <p>"Automatika PRO hat es uns ermöglicht, den Produktionsprozess vollständig zu automatisieren. Effizienz und Präzision des Systems sind beeindruckend!"</p>
-    <span>- Marko K., Produktionsleiter</span>
-  </div>
+  <div class="recenzija lang lang-bs"><p>"Automatika PRO nam je omogućila potpuno automatizovanje proizvodnog procesa."</p><span>- Marko K.</span></div>
+  <div class="recenzija lang lang-en"><p>"Automatika PRO enabled full automation of our production process."</p><span>- Marko K.</span></div>
+  <div class="recenzija lang lang-de"><p>"Automatika PRO ermöglichte die vollständige Automatisierung unseres Produktionsprozesses."</p><span>- Marko K.</span></div>
 </section>
 
+<!-- Kontakt -->
 <section id="kontakt">
   <h2 class="lang lang-bs">Kontakt</h2>
   <h2 class="lang lang-en">Contact</h2>
@@ -211,8 +173,8 @@
 
 <script>
 function setLang(lang) {
-  document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
-  document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
+  document.querySelectorAll('.lang').forEach(el => el.style.display='none');
+  document.querySelectorAll('.lang-'+lang).forEach(el => el.style.display='block');
 }
 </script>
 
