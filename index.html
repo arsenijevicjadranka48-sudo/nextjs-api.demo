@@ -9,7 +9,7 @@
   body { font-family: Arial, sans-serif; color:#222; background-color:#f5f5f5; }
 
   header {
-    background-image: url('mcajpg.jpg');
+    background-image: url('mca.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -145,6 +145,40 @@ const t={
 };
 
 function postaviJezik(lang){
+  document.getElementById("naslov").innerText=t[lang].naslov;
+  document.getElementById("podnaslov").innerText=t[lang].podnaslov;
+  document.getElementById("saznajvise").innerText=t[lang].saznajvise;
+  document.getElementById("nav-onama").innerText=t[lang].nav[0];
+  document.getElementById("nav-usluge").innerText=t[lang].nav[1];
+  document.getElementById("nav-projekti").innerText=t[lang].nav[2];
+  document.getElementById("nav-kontakt").innerText=t[lang].nav[3];
+
+  // Sekcije naslovi
+  document.getElementById("onama-naslov").innerText=t[lang].nav[0];
+  document.getElementById("usluge-naslov").innerText=t[lang].nav[1];
+  document.getElementById("projekti-naslov").innerText=t[lang].nav[2];
+  document.getElementById("kontakt-naslov").innerText=t[lang].nav[3];
+
+  // Tekstovi
+  document.getElementById("onama-tekst1").innerText=t[lang].onama[0];
+  document.getElementById("onama-tekst2").innerText=t[lang].onama[1];
+  document.getElementById("onama-tekst3").innerText=t[lang].onama[2];
+  document.getElementById("usluge-tekst").innerText=t[lang].usluge;
+  document.getElementById("lista-usluga").innerHTML=t[lang].lista.map(li=>`<li>${li}</li>`).join("");
+
+  // Projekti
+  document.getElementById("proj1-naslov").innerText=t[lang].projekti[0][0];
+  document.getElementById("proj1-tekst").innerText=t[lang].projekti[0][1];
+  document.getElementById("proj2-naslov").innerText=t[lang].projekti[1][0];
+  document.getElementById("proj2-tekst").innerText=t[lang].projekti[1][1];
+  document.getElementById("proj3-naslov").innerText=t[lang].projekti[2][0];
+  document.getElementById("proj3-tekst").innerText=t[lang].projekti[2][1];
+
+  // Kontakt
+  document.getElementById("kontakt-tekst").innerText=t[lang].kontakt;
+}
+
+window.onload=function(){ postaviJezik('bs'); }(lang){
   document.getElementById("naslov").innerText=t[lang].naslov;
   document.getElementById("podnaslov").innerText=t[
 
