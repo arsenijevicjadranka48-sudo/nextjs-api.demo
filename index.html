@@ -13,9 +13,13 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    text-align: center;
+    height: 400px; /* smanjena visina */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
-    padding: 100px 20px 80px; /* smanjena visina */
+    text-align: center;
     position: relative;
   }
   header::after {
@@ -43,6 +47,10 @@
   p { line-height:1.6; margin-bottom:20px; }
   ul { margin-left:20px; margin-bottom:20px; }
   li { margin-bottom:10px; }
+
+  .projekti-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+  .projekat { background:#f0f8ff; border-radius:10px; padding:15px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
+  .projekat h3 { color:#0059b3; margin-bottom:10px; }
 
   .galerija {
     display: grid;
@@ -108,25 +116,72 @@
   <a onclick="setLang('de')">DE</a>
 </nav>
 
+<section id="o-nama">
+  <h2 class="lang lang-bs">O nama</h2>
+  <h2 class="lang lang-en">About Us</h2>
+  <h2 class="lang lang-de">Über uns</h2>
+
+  <p class="lang lang-bs">Naš tim čine inženjeri i tehničari s bogatim iskustvom iz oblasti automatike, mehatronike, elektronike i programiranja. Razvijamo rješenja koja povezuju teoriju i praksu.</p>
+  <p class="lang lang-en">Our team consists of engineers and technicians with extensive experience in automation, mechatronics, electronics, and programming. We develop solutions that connect theory and practice.</p>
+  <p class="lang lang-de">Unser Team besteht aus Ingenieuren und Technikern mit umfangreicher Erfahrung in Automatisierung, Mechatronik, Elektronik und Programmierung. Wir entwickeln Lösungen, die Theorie und Praxis verbinden.</p>
+</section>
+
+<section id="usluge">
+  <h2 class="lang lang-bs">Usluge</h2>
+  <h2 class="lang lang-en">Services</h2>
+  <h2 class="lang lang-de">Dienstleistungen</h2>
+
+  <ul class="lang lang-bs">
+    <li>Programiranje i konfiguracija Arduino, ESP32 i PLC kontrolera</li>
+    <li>Izrada elektronskih ploča i razvoj prilagođenih modula po zahtjevu klijenta</li>
+    <li>Projektovanje i implementacija sistema za automatizaciju u industriji i domaćinstvima</li>
+  </ul>
+  <ul class="lang lang-en">
+    <li>Programming and configuration of Arduino, ESP32, and PLC controllers</li>
+    <li>Creation of electronic boards and development of custom modules per client request</li>
+    <li>Design and implementation of automation systems for industry and homes</li>
+  </ul>
+  <ul class="lang lang-de">
+    <li>Programmierung und Konfiguration von Arduino-, ESP32- und PLC-Controllern</li>
+    <li>Erstellung von Leiterplatten und Entwicklung kundenspezifischer Module nach Kundenwunsch</li>
+    <li>Planung und Implementierung von Automatisierungssystemen für Industrie und Haushalte</li>
+  </ul>
+</section>
+
 <section id="projekti">
   <h2 class="lang lang-bs">Projekti</h2>
   <h2 class="lang lang-en">Projects</h2>
   <h2 class="lang lang-de">Projekte</h2>
 
   <div class="galerija">
-    <!-- 10 galerijskih slika -->
-    <script>
-      for(let i=1;i<=10;i++){
-        document.write(`
-        <div class="galerija-item">
-          <img src="projekat${i}.jpg" alt="Projekat ${i}">
-          <p class="lang lang-bs">Projekat ${i} – opis na bosanskom.</p>
-          <p class="lang lang-en">Project ${i} – description in English.</p>
-          <p class="lang lang-de">Projekt ${i} – Beschreibung auf Deutsch.</p>
-        </div>
-        `);
-      }
-    </script>
+    <!-- 10 galerijskih slika sa opisima -->
+    ${[...Array(10).keys()].map(i => `
+      <div class="galerija-item">
+        <img src="projekat${i+1}.jpg" alt="Projekat ${i+1}">
+        <p class="lang lang-bs">Projekat ${i+1} – detaljan opis projekta na bosanskom jeziku.</p>
+        <p class="lang lang-en">Project ${i+1} – detailed description in English.</p>
+        <p class="lang lang-de">Projekt ${i+1} – detaillierte Beschreibung auf Deutsch.</p>
+      </div>
+    `).join('')}
+  </div>
+</section>
+
+<section id="recenzije">
+  <h2 class="lang lang-bs">Recenzije klijenata</h2>
+  <h2 class="lang lang-en">Customer Reviews</h2>
+  <h2 class="lang lang-de">Kundenbewertungen</h2>
+
+  <div class="recenzija lang lang-bs">
+    <p>"Automatika PRO nam je omogućila potpuno automatizovanje proizvodnog procesa. Efikasnost i preciznost sistema su impresivni!"</p>
+    <span>- Marko K., direktor proizvodnje</span>
+  </div>
+  <div class="recenzija lang lang-en">
+    <p>"Automatika PRO enabled us to fully automate our production process. System efficiency and precision are impressive!"</p>
+    <span>- Marko K., Production Director</span>
+  </div>
+  <div class="recenzija lang lang-de">
+    <p>"Automatika PRO hat es uns ermöglicht, den Produktionsprozess vollständig zu automatisieren. Effizienz und Präzision des Systems sind beeindruckend!"</p>
+    <span>- Marko K., Produktionsleiter</span>
   </div>
 </section>
 
