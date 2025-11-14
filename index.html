@@ -15,7 +15,7 @@
     background-position: center center;
     text-align: center;
     color: white;
-    padding: 150px 20px 100px;
+    padding: 100px 20px 80px; /* smanjena visina */
     position: relative;
   }
   header::after {
@@ -125,33 +125,83 @@
   <p class="lang lang-de">Unser Team besteht aus Ingenieuren und Technikern mit umfangreicher Erfahrung in Automatisierung, Mechatronik, Elektronik und Programmierung.</p>
 </section>
 
-<section id="usluge">
-  <h2 class="lang lang-bs">Usluge</h2>
-  <h2 class="lang lang-en">Services</h2>
-  <h2 class="lang lang-de">Dienstleistungen</h2>
-
-  <ul class="lang lang-bs">
-    <li>Programiranje i konfiguracija Arduino, ESP32 i PLC kontrolera</li>
-    <li>Izrada elektronskih ploča i razvoj prilagođenih modula po zahtjevu klijenta</li>
-    <li>Projektovanje i implementacija sistema za automatizaciju u industriji i domaćinstvima</li>
-  </ul>
-  <ul class="lang lang-en">
-    <li>Programming and configuration of Arduino, ESP32, and PLC controllers</li>
-    <li>Creation of electronic boards and development of custom modules per client request</li>
-    <li>Design and implementation of automation systems for industry and homes</li>
-  </ul>
-  <ul class="lang lang-de">
-    <li>Programmierung und Konfiguration von Arduino-, ESP32- und PLC-Controllern</li>
-    <li>Erstellung von Leiterplatten und Entwicklung kundenspezifischer Module nach Kundenwunsch</li>
-    <li>Planung und Implementierung von Automatisierungssystemen für Industrie und Haushalte</li>
-  </ul>
-</section>
-
 <section id="projekti">
   <h2 class="lang lang-bs">Projekti</h2>
   <h2 class="lang lang-en">Projects</h2>
   <h2 class="lang lang-de">Projekte</h2>
 
-  <div class="projekti-grid lang lang-bs">
-    <div class="projekat">
-      <h3>Pametni
+  <div class="galerija">
+    <!-- Generišemo 10 slika -->
+    <div class="galerija-item">
+      <img src="projekat1.jpg" alt="Projekat 1">
+      <p class="lang lang-bs">Projekat 1 – opis na bosanskom.</p>
+      <p class="lang lang-en">Project 1 – description in English.</p>
+      <p class="lang lang-de">Projekt 1 – Beschreibung auf Deutsch.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat2.jpg" alt="Projekat 2">
+      <p class="lang lang-bs">Projekat 2 – opis na bosanskom.</p>
+      <p class="lang lang-en">Project 2 – description in English.</p>
+      <p class="lang lang-de">Projekt 2 – Beschreibung auf Deutsch.</p>
+    </div>
+    <!-- Dodaj ostale slike do 10 -->
+    <div class="galerija-item">
+      <img src="projekat3.jpg" alt="Projekat 3">
+      <p class="lang lang-bs">Projekat 3 – opis na bosanskom.</p>
+      <p class="lang lang-en">Project 3 – description in English.</p>
+      <p class="lang lang-de">Projekt 3 – Beschreibung auf Deutsch.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat4.jpg" alt="Projekat 4">
+      <p class="lang lang-bs">Projekat 4 – opis na bosanskom.</p>
+      <p class="lang lang-en">Project 4 – description in English.</p>
+      <p class="lang lang-de">Projekt 4 – Beschreibung auf Deutsch.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat5.jpg" alt="Projekat 5">
+      <p class="lang lang-bs">Projekat 5 – opis na bosanskom.</p>
+      <p class="lang lang-en">Project 5 – description in English.</p>
+      <p class="lang lang-de">Projekt 5 – Beschreibung auf Deutsch.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat6.jpg" alt="Projekat 6">
+      <p class="lang lang-bs">Projekat 6 – opis na bosanskom.</p>
+      <p class="lang lang-en">Project 6 – description in English.</p>
+      <p class="lang lang-de">Projekt 6 – Beschreibung auf Deutsch.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat7.jpg" alt="Projekat 7">
+      <p class="lang lang-bs">Projekat 7 – opis na bosanskom.</p>
+      <p class="lang lang-en">Project 7 – description in English.</p>
+      <p class="lang lang-de">Projekt 7 – Beschreibung auf Deutsch.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat8.jpg" alt="Projekat 8">
+      <p class="lang lang-bs">Projekat 8 – opis na bosanskom.</p>
+      <p class="lang lang-en">Project 8 – description in English.</p>
+      <p class="lang lang-de">Projekt 8 – Beschreibung auf Deutsch.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat9.jpg" alt="Projekat 9">
+      <p class="lang lang-bs">Projekat 9 – opis na bosanskom.</p>
+      <p class="lang lang-en">Project 9 – description in English.</p>
+      <p class="lang lang-de">Projekt 9 – Beschreibung auf Deutsch.</p>
+    </div>
+    <div class="galerija-item">
+      <img src="projekat10.jpg" alt="Projekat 10">
+      <p class="lang lang-bs">Projekat 10 – opis na bosanskom.</p>
+      <p class="lang lang-en">Project 10 – description in English.</p>
+      <p class="lang lang-de">Projekt 10 – Beschreibung auf Deutsch.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
+}
+</script>
+
+</body>
+</html>
