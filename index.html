@@ -9,17 +9,19 @@
   body { font-family: Arial, sans-serif; color:#222; background-color:#f5f5f5; }
 
   header {
-    background-image: url('mca.jpeg'); /* Promijenjeno u mca.jpeg */
+    background-image: url('mca.jpeg'); /* slika u root folderu */
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center center;
     position: relative;
-    text-align:center;
-    color:white;
-    padding:80px 20px;
+    text-align: center;
+    color: white;
+    padding: 150px 20px 100px;
   }
   header::after {
     content:""; position:absolute; top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.4);
+    pointer-events:none;
   }
   header h1, header p, header a { position:relative; z-index:2; }
   header h1 { font-size:2.5em; margin-bottom:10px; }
@@ -60,6 +62,12 @@
 
   .btn-back { display:inline-block; background:#003366; color:white; padding:10px 15px; text-decoration:none; border-radius:5px; }
   .btn-back:hover { background:#0059b3; }
+
+  /* Responsive */
+  @media(max-width:768px) {
+    header h1 { font-size:2em; }
+    header p { font-size:1em; }
+  }
 </style>
 </head>
 <body>
@@ -129,88 +137,10 @@
 </section>
 
 <script>
-const t = {
-  bs: {
-    naslov:"Automatika PRO – Industrijska rješenja",
-    podnaslov:"Profesionalno programiranje, projektovanje i izrada automatizovanih sistema – od ideje do gotovog rješenja.",
-    saznajvise:"Saznaj više",
-    nav:["O nama","Usluge","Projekti","Kontakt"],
-    onama:[
-      "Naš tim čine inženjeri i tehničari s bogatim iskustvom iz oblasti automatike, mehatronike, elektronike i programiranja. Kombinacijom znanja i inovativnog pristupa, razvijamo rješenja koja povezuju teoriju i praksu.",
-      "Bavimo se razvojem, projektovanjem i implementacijom automatizovanih sistema za kućnu i industrijsku primjenu – od jednostavnih kontrolera do kompleksnih IoT sistema. Posebnu pažnju posvećujemo preciznosti, pouzdanosti i energetskoj efikasnosti svakog projekta.",
-      "Naš cilj je da tehnologiju približimo svima: bilo da se radi o optimizaciji proizvodnih procesa, pametnoj rasvjeti, sistemima za nadzor okoline ili edukativnim projektima. Vjerujemo da automatika nije samo tehnologija, već korak ka pametnijem i održivijem svijetu."
-    ],
-    usluge:"Naša ponuda obuhvata kompletne usluge iz oblasti automatizacije, elektronike i tehničkog razvoja:",
-    lista:[
-      "Programiranje i konfiguracija Arduino, ESP32 i PLC kontrolera",
-      "Izrada elektronskih ploča i razvoj prilagođenih modula po zahtjevu klijenta",
-      "Projektovanje i implementacija sistema za automatizaciju u industriji i domaćinstvima",
-      "Integracija senzora, aktuatora, motora i upravljačkih komponenti",
-      "Modernizacija i servis postojećih automatizovanih sistema",
-      "Razvoj pametnih IoT uređaja i bežičnih sistema za nadzor i kontrolu",
-      "Izrada edukativnih i demonstracionih projekata za škole i tehničke fakultete"
-    ],
-    projekti:[
-      ["Pametni sistem rasvjete","Napredni sistem koji automatski reguliše intenzitet i vrijeme rada rasvjete pomoću senzora pokreta i svjetlosti, uz mogućnost daljinskog upravljanja putem mobilne aplikacije."],
-      ["Industrijski sistem za detekciju gasova","Sofisticirani uređaj za nadzor kvaliteta zraka u proizvodnim pogonima, sa zvučnim i vizuelnim alarmom te mogućnošću povezivanja na centralni SCADA sistem."],
-      ["Automatsko navodnjavanje","IoT sistem koji mjeri vlagu tla i upravlja pumpama za zalijevanje u realnom vremenu, optimizujući potrošnju vode i povećavajući efikasnost navodnjavanja."]
-    ],
-    kontakt:"Pošaljite nam poruku putem forme ispod ili direktno na e-mail: halilovicnusret8@gmail.com"
-  },
-  en: {
-    naslov:"Automatika PRO – Industrial Solutions",
-    podnaslov:"Professional programming, design and implementation of automated systems – from idea to final solution.",
-    saznajvise:"Learn more",
-    nav:["About Us","Services","Projects","Contact"],
-    onama:[
-      "Our team consists of engineers and technicians with extensive experience in automation, mechatronics, electronics, and software development. Combining technical expertise with innovative thinking, we deliver solutions that bridge theory and real-world application.",
-      "We specialize in the design and implementation of automated systems for industrial and residential use – from simple controllers to complex IoT solutions. We emphasize precision, reliability, and energy efficiency in every project.",
-      "Our mission is to make technology accessible to everyone: whether optimizing production processes, smart lighting, environmental monitoring, or educational projects. Automation is not just technology; it is a step toward a smarter and more sustainable world."
-    ],
-    usluge:"We provide comprehensive engineering and automation services tailored to your needs:",
-    lista:[
-      "Programming and configuration of Arduino, ESP32, and PLC controllers",
-      "Design and development of custom electronic boards and modules",
-      "Automation of industrial and home processes",
-      "Integration of sensors, actuators, motors, and control systems",
-      "Upgrades and maintenance of existing automated systems",
-      "Development of smart IoT devices and wireless monitoring systems",
-      "Educational and demonstration projects for schools and technical universities"
-    ],
-    projekti:[
-      ["Smart Lighting System","An advanced system that automatically regulates light intensity and operation time using motion and light sensors, with remote control via mobile app."],
-      ["Industrial Gas Detection System","Sophisticated device for air quality monitoring in production facilities, with audio-visual alarms and connectivity to a central SCADA system."],
-      ["Automatic Irrigation System","IoT system measuring soil moisture and controlling water pumps in real-time, optimizing water usage and irrigation efficiency."]
-    ],
-    kontakt:"Send us a message using the form below or directly at: halilovicnusret8@gmail.com"
-  },
-  de: {
-    naslov:"Automatika PRO – Industrielle Lösungen",
-    podnaslov:"Professionelle Programmierung, Planung und Umsetzung von Automatisierungssystemen – von der Idee bis zur fertigen Lösung.",
-    saznajvise:"Mehr erfahren",
-    nav:["Über uns","Dienstleistungen","Projekte","Kontakt"],
-    onama:[
-      "Unser Team besteht aus Ingenieuren und Technikern mit umfangreicher Erfahrung in Automatisierung, Mechatronik, Elektronik und Softwareentwicklung. Durch die Kombination von Fachwissen und Innovation entwickeln wir Lösungen, die Theorie und Praxis verbinden.",
-      "Wir sind spezialisiert auf die Entwicklung und Umsetzung von Automatisierungssystemen für Industrie und Haushalt – von einfachen Steuerungen bis hin zu komplexen IoT-Lösungen. Präzision, Zuverlässigkeit und Energieeffizienz stehen bei jedem Projekt im Vordergrund.",
-      "Unsere Mission ist es, Technologie für alle zugänglich zu machen: sei es zur Optimierung von Produktionsprozessen, für intelligente Beleuchtung, Umweltüberwachung oder Bildungsprojekte. Automatisierung ist nicht nur Technologie, sondern ein Schritt in eine intelligentere und nachhaltigere Welt."
-    ],
-    usluge:"Wir bieten umfassende Dienstleistungen im Bereich Engineering und Automatisierung an:",
-    lista:[
-      "Programmierung und Konfiguration von Arduino-, ESP32- und SPS-Steuerungen",
-      "Entwicklung und Herstellung maßgeschneiderter elektronischer Platinen und Module",
-      "Automatisierung von Industrie- und Hausprozessen",
-      "Integration von Sensoren, Aktoren, Motoren und Steuerungssystemen",
-      "Modernisierung und Wartung bestehender Automatisierungssysteme",
-      "Entwicklung intelligenter IoT-Geräte und drahtloser Überwachungssysteme",
-      "Bildungs- und Demonstrationsprojekte für Schulen und technische Hochschulen"
-    ],
-    projekti:[
-      ["Intelligentes Beleuchtungssystem","Fortgeschrittenes System zur automatischen Regelung der Lichtintensität und Betriebszeit mit Bewegungs- und Lichtsensoren, steuerbar über mobile App."],
-      ["Industrie-Gasdetektionssystem","Spezialisiertes Gerät zur Überwachung der Luftqualität in Produktionsstätten, mit akustischen und visuellen Alarmen und Anbindung an ein zentrales SCADA-System."],
-      ["Automatisches Bewässerungssystem","IoT-System, das die Bodenfeuchtigkeit misst und Pumpen in Echtzeit steuert, um den Wasserverbrauch zu optimieren."]
-    ],
-    kontakt:"Senden Sie uns eine Nachricht über das Formular unten oder direkt an: halilovicnusret8@gmail.com"
-  }
+const t={
+  bs:{ naslov:"Automatika PRO – Industrijska rješenja", podnaslov:"Profesionalno programiranje, projektovanje i izrada automatizovanih sistema – od ideje do gotovog rješenja.", saznajvise:"Saznaj više", nav:["O nama","Usluge","Projekti","Kontakt"], onama:["Naš tim čine inženjeri i tehničari s bogatim iskustvom iz oblasti automatike, mehatronike, elektronike i programiranja. Kombinacijom znanja i inovativnog pristupa, razvijamo rješenja koja povezuju teoriju i praksu.","Bavimo se razvojem, projektovanjem i implementacijom automatizovanih sistema za kućnu i industrijsku primjenu – od jednostavnih kontrolera do kompleksnih IoT sistema. Posebnu pažnju posvećujemo preciznosti, pouzdanosti i energetskoj efikasnosti svakog projekta.","Naš cilj je da tehnologiju približimo svima: bilo da se radi o optimizaciji proizvodnih procesa, pametnoj rasvjeti, sistemima za nadzor okoline ili edukativnim projektima. Vjerujemo da automatika nije samo tehnologija, već korak ka pametnijem i održivijem svijetu."], usluge:"Naša ponuda obuhvata kompletne usluge iz oblasti automatizacije, elektronike i tehničkog razvoja:", lista:["Programiranje i konfiguracija Arduino, ESP32 i PLC kontrolera","Izrada elektronskih ploča i razvoj prilagođenih modula po zahtjevu klijenta","Projektovanje i implementacija sistema za automatizaciju u industriji i domaćinstvima","Integracija senzora, aktuatora, motora i upravljačkih komponenti","Modernizacija i servis postojećih automatizovanih sistema","Razvoj pametnih IoT uređaja i bežičnih sistema za nadzor i kontrolu","Izrada edukativnih i demonstracionih projekata za škole i tehničke fakultete"], projekti:[["Pametni sistem rasvjete","Napredni sistem koji automatski reguliše intenzitet i vrijeme rada rasvjete pomoću senzora pokreta i svjetlosti, uz mogućnost daljinskog upravljanja putem mobilne aplikacije."],["Industrijski sistem za detekciju gasova","Sofisticirani uređaj za nadzor kvaliteta zraka u proizvodnim pogonima, sa zvučnim i vizuelnim alarmom te mogućnošću povezivanja na centralni SCADA sistem."],["Automatsko navodnjavanje","IoT sistem koji mjeri vlagu tla i upravlja pumpama za zalijevanje u realnom vremenu, optimizujući potrošnju vode i povećavajući efikasnost navodnjavanja."]], kontakt:"Pošaljite nam poruku putem forme ispod ili direktno na e-mail: halilovicnusret8@gmail.com"},
+  en:{ naslov:"Automatika PRO – Industrial Solutions", podnaslov:"Professional programming, design and implementation of automated systems – from idea to final solution.", saznajvise:"Learn more", nav:["About Us","Services","Projects","Contact"], onama:["Our team consists of engineers and technicians with extensive experience in automation, mechatronics, electronics, and software development. Combining technical expertise with innovative thinking, we deliver solutions that bridge theory and real-world application.","We specialize in the design and implementation of automated systems for industrial and residential use – from simple controllers to complex IoT solutions. We emphasize precision, reliability, and energy efficiency in every project.","Our mission is to make technology accessible to everyone: whether optimizing production processes, smart lighting, environmental monitoring, or educational projects. Automation is not just technology; it is a step toward a smarter and more sustainable world."], usluge:"We provide comprehensive engineering and automation services tailored to your needs:", lista:["Programming and configuration of Arduino, ESP32, and PLC controllers","Design and development of custom electronic boards and modules","Automation of industrial and home processes","Integration of sensors, actuators, motors, and control systems","Upgrades and maintenance of existing automated systems","Development of smart IoT devices and wireless monitoring systems","Educational and demonstration projects for schools and technical universities"], projekti:[["Smart Lighting System","An advanced system that automatically regulates light intensity and operation time using motion and light sensors, with remote control via mobile app."],["Industrial Gas Detection System","Sophisticated device for air quality monitoring in production facilities, with audio-visual alarms and connectivity to a central SCADA system."],["Automatic Irrigation System","IoT system measuring soil moisture and controlling water pumps in real-time, optimizing water usage and irrigation efficiency."]], kontakt:"Send us a message using the form below or directly at: halilovicnusret8@gmail.com"},
+  de:{ naslov:"Automatika PRO – Industrielle Lösungen", podnaslov:"Professionelle Programmierung, Planung und Umsetzung von Automatisierungssystemen – von der Idee bis zur fertigen Lösung.", saznajvise:"Mehr erfahren", nav:["Über uns","Dienstleistungen","Projekte","Kontakt"], onama:["Unser Team besteht aus Ingenieuren und Technikern mit umfangreicher Erfahrung in Automatisierung, Mechatronik, Elektronik und Softwareentwicklung. Durch die Kombination von Fachwissen und Innovation entwickeln wir Lösungen, die Theorie und Praxis verbinden.","Wir sind spezialisiert auf die Entwicklung und Umsetzung von Automatisierungssystemen für Industrie und Haushalt – von einfachen Steuerungen bis hin zu komplexen IoT-Lösungen. Präzision, Zuverlässigkeit und Energieeffizienz stehen bei jedem Projekt im Vordergrund.","Unsere Mission ist es, Technologie für alle zugänglich zu machen: sei es zur Optimierung von Produktionsprozessen, für intelligente Beleuchtung, Umweltüberwachung oder Bildungsprojekte. Automatisierung ist nicht nur Technologie, sondern ein Schritt in eine intelligentere und nachhaltigere Welt."], usluge:"Wir bieten umfassende Dienstleistungen im Bereich Engineering und Automatisierung an:", lista:["Programmierung und Konfiguration von Arduino-, ESP32- und SPS-Steuerungen","Entwicklung und Herstellung maßgeschneiderter elektronischer Platinen und Module","Automatisierung von Industrie- und Hausprozessen","Integration von Sensoren, Aktoren, Motoren und Steuerungssystemen","Modernisierung und Wartung bestehender Automatisierungssysteme","Entwicklung intelligenter IoT-Geräte und drahtloser Überwachungssysteme","Bildungs- und Demonstrationsprojekte für Schulen und technische Hochschulen"], projekti:[["Intelligentes Beleuchtungssystem","Fortgeschrittenes System zur automatischen Regelung der Lichtintensität und Betriebszeit mit Bewegungs- und Lichtsensoren, steuerbar über mobile App."],["Industrie-Gasdetektionssystem","Spezialisiertes Gerät zur Überwachung der Luftqualität in Produktionsstätten, mit akustischen und visuellen Alarmen und Anbindung an ein zentrales SCADA-System."],["Automatisches Bewässerungssystem","IoT-System, das die Bodenfeuchtigkeit misst und Pumpen in Echtzeit steuert, um den Wasserverbrauch zu optimieren."]], kontakt:"Senden Sie uns eine Nachricht über das Formular unten oder direkt an: halilovicnusret8@gmail.com"}
 };
 
 function postaviJezik(lang){
