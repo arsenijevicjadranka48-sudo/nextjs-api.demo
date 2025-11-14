@@ -32,7 +32,7 @@
   }
 
   nav { display:flex; justify-content:center; gap:20px; background:#003366; padding:15px; flex-wrap:wrap; }
-  nav a { color:white; text-decoration:none; font-weight:bold; transition: color 0.3s; }
+  nav a { color:white; text-decoration:none; font-weight:bold; transition: color 0.3s; cursor:pointer; }
   nav a:hover { color:#ffcc00; }
 
   section {
@@ -87,106 +87,71 @@
     header h1 { font-size:2em; }
     header p { font-size:1em; }
   }
+
+  /* Multijezični sadržaj */
+  .lang { display:none; }
+  .lang-bs { display:block; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Automatika PRO – Industrijska rješenja</h1>
-  <p>Profesionalno programiranje, projektovanje i izrada automatizovanih sistema – od ideje do gotovog rješenja.</p>
-  <a href="#o-nama">Saznaj više</a>
+  <h1 class="lang lang-bs">Automatika PRO – Industrijska rješenja</h1>
+  <h1 class="lang lang-en">Automatika PRO – Industrial Solutions</h1>
+  <h1 class="lang lang-de">Automatika PRO – Industrielle Lösungen</h1>
+
+  <p class="lang lang-bs">Profesionalno programiranje, projektovanje i izrada automatizovanih sistema – od ideje do gotovog rješenja.</p>
+  <p class="lang lang-en">Professional programming, design, and implementation of automated systems – from concept to finished solution.</p>
+  <p class="lang lang-de">Professionelle Programmierung, Planung und Umsetzung automatisierter Systeme – von der Idee bis zur fertigen Lösung.</p>
+
+  <a href="#o-nama" class="lang lang-bs">Saznaj više</a>
+  <a href="#o-nama" class="lang lang-en">Learn more</a>
+  <a href="#o-nama" class="lang lang-de">Mehr erfahren</a>
 </header>
 
 <nav>
-  <a href="#o-nama">O nama</a>
-  <a href="#usluge">Usluge</a>
-  <a href="#projekti">Projekti</a>
-  <a href="#recenzije">Recenzije</a>
-  <a href="#kontakt">Kontakt</a>
+  <a onclick="setLang('bs')">BS</a>
+  <a onclick="setLang('en')">EN</a>
+  <a onclick="setLang('de')">DE</a>
 </nav>
 
 <section id="o-nama">
-  <h2>O nama</h2>
-  <p>Naš tim čine inženjeri i tehničari s bogatim iskustvom iz oblasti automatike, mehatronike, elektronike i programiranja. Kombinacijom znanja i inovativnog pristupa, razvijamo rješenja koja povezuju teoriju i praksu.</p>
-  <p>Bavimo se razvojem, projektovanjem i implementacijom automatizovanih sistema za kućnu i industrijsku primjenu – od jednostavnih kontrolera do kompleksnih IoT sistema. Posebnu pažnju posvećujemo preciznosti, pouzdanosti i energetskoj efikasnosti svakog projekta.</p>
-  <p>Naš cilj je da tehnologiju približimo svima: optimizacija proizvodnih procesa, pametna rasvjeta, sistemi za nadzor okoline ili edukativni projekti.</p>
-  <p>Pored tehničke ekspertize, posebno naglašavamo individualni pristup svakom klijentu i stalno unapređenje i inovaciju kako bi sistemi bili sigurni, pouzdani i dugoročno održivi.</p>
+  <h2 class="lang lang-bs">O nama</h2>
+  <h2 class="lang lang-en">About Us</h2>
+  <h2 class="lang lang-de">Über uns</h2>
+
+  <p class="lang lang-bs">Naš tim čine inženjeri i tehničari s bogatim iskustvom iz oblasti automatike, mehatronike, elektronike i programiranja.</p>
+  <p class="lang lang-en">Our team consists of engineers and technicians with extensive experience in automation, mechatronics, electronics, and programming.</p>
+  <p class="lang lang-de">Unser Team besteht aus Ingenieuren und Technikern mit umfangreicher Erfahrung in Automatisierung, Mechatronik, Elektronik und Programmierung.</p>
 </section>
 
 <section id="usluge">
-  <h2>Usluge</h2>
-  <p>Naša ponuda obuhvata kompletne usluge iz oblasti automatizacije, elektronike i tehničkog razvoja:</p>
-  <ul>
+  <h2 class="lang lang-bs">Usluge</h2>
+  <h2 class="lang lang-en">Services</h2>
+  <h2 class="lang lang-de">Dienstleistungen</h2>
+
+  <ul class="lang lang-bs">
     <li>Programiranje i konfiguracija Arduino, ESP32 i PLC kontrolera</li>
     <li>Izrada elektronskih ploča i razvoj prilagođenih modula po zahtjevu klijenta</li>
     <li>Projektovanje i implementacija sistema za automatizaciju u industriji i domaćinstvima</li>
-    <li>Integracija senzora, aktuatora, motora i upravljačkih komponenti</li>
-    <li>Modernizacija i servis postojećih automatizovanih sistema</li>
-    <li>Razvoj pametnih IoT uređaja i bežičnih sistema za nadzor i kontrolu</li>
-    <li>Izrada edukativnih i demonstracionih projekata za škole i tehničke fakultete</li>
   </ul>
-  <p>Svaki projekt realizujemo od ideje, preko prototipa, testiranja, do implementacije gotovog rješenja. Klijenti dobijaju dokumentaciju i tehničku podršku tokom cijelog životnog ciklusa sistema.</p>
+  <ul class="lang lang-en">
+    <li>Programming and configuration of Arduino, ESP32, and PLC controllers</li>
+    <li>Creation of electronic boards and development of custom modules per client request</li>
+    <li>Design and implementation of automation systems for industry and homes</li>
+  </ul>
+  <ul class="lang lang-de">
+    <li>Programmierung und Konfiguration von Arduino-, ESP32- und PLC-Controllern</li>
+    <li>Erstellung von Leiterplatten und Entwicklung kundenspezifischer Module nach Kundenwunsch</li>
+    <li>Planung und Implementierung von Automatisierungssystemen für Industrie und Haushalte</li>
+  </ul>
 </section>
 
 <section id="projekti">
-  <h2>Projekti</h2>
-  <div class="projekti-grid">
+  <h2 class="lang lang-bs">Projekti</h2>
+  <h2 class="lang lang-en">Projects</h2>
+  <h2 class="lang lang-de">Projekte</h2>
+
+  <div class="projekti-grid lang lang-bs">
     <div class="projekat">
-      <h3>Pametni sistem rasvjete</h3>
-      <p>Napredni sistem koji automatski reguliše intenzitet i vrijeme rada rasvjete pomoću senzora pokreta i svjetlosti, uz daljinsko upravljanje putem mobilne aplikacije.</p>
-    </div>
-    <div class="projekat">
-      <h3>Industrijski sistem za detekciju gasova</h3>
-      <p>Sofisticirani uređaj za nadzor kvaliteta zraka u proizvodnim pogonima, sa zvučnim i vizuelnim alarmom i povezivanjem na centralni SCADA sistem.</p>
-    </div>
-    <div class="projekat">
-      <h3>Automatsko navodnjavanje</h3>
-      <p>IoT sistem koji mjeri vlagu tla i upravlja pumpama za zalijevanje u realnom vremenu, optimizujući potrošnju vode i efikasnost.</p>
-    </div>
-  </div>
-
-  <div class="galerija">
-    <div class="galerija-item">
-      <img src="projekat1.jpg" alt="Pametni sistem rasvjete">
-      <p>Pametni sistem rasvjete – automatska regulacija intenziteta i rada svjetala.</p>
-    </div>
-    <div class="galerija-item">
-      <img src="projekat2.jpg" alt="Industrijski sistem za detekciju gasova">
-      <p>Industrijski sistem za detekciju gasova – nadzor kvaliteta zraka u proizvodnji.</p>
-    </div>
-    <div class="galerija-item">
-      <img src="projekat3.jpg" alt="Automatsko navodnjavanje">
-      <p>Automatsko navodnjavanje – IoT sistem za kontrolu vlage tla i pumpi.</p>
-    </div>
-  </div>
-</section>
-
-<section id="recenzije">
-  <h2>Recenzije klijenata</h2>
-  <div class="recenzija">
-    <p>"Automatika PRO je našoj firmi omogućila potpuno automatizovanje proizvodnog procesa. Efikasnost i preciznost sistema su impresivni!"</p>
-    <span>- Marko K., direktor proizvodnje</span>
-  </div>
-  <div class="recenzija">
-    <p>"Tim je profesionalan, kreativan i uvijek dostupan za konsultacije. Preporučujemo njihove usluge."</p>
-    <span>- Ana S., projekt menadžer</span>
-  </div>
-  <div class="recenzija">
-    <p>"Pametni sistem rasvjete značajno je smanjio potrošnju energije i olakšao upravljanje prostorom."</p>
-    <span>- Ivan T., vlasnik kompanije</span>
-  </div>
-</section>
-
-<section id="kontakt">
-  <h2>Kontakt</h2>
-  <p>Pošaljite nam poruku putem forme ispod ili direktno na e-mail: halilovicnusret8@gmail.com</p>
-  <form action="https://formspree.io/f/mayvlbqk" method="POST">
-    <input type="text" name="ime" placeholder="Vaše ime" required>
-    <input type="email" name="email" placeholder="Vaš e-mail" required>
-    <textarea name="poruka" placeholder="Unesite vašu poruku..." required></textarea>
-    <button type="submit">Pošalji poruku</button>
-  </form>
-</section>
-
-</body>
-</html>
+      <h3>Pametni
