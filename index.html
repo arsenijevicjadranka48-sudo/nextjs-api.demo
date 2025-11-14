@@ -106,9 +106,9 @@
 <body>
 
 <header id="pocetna">
-  <h1 id="naslov">Automatika PRO – Industrijska rješenja</h1>
-  <p id="podnaslov">Profesionalno programiranje, projektovanje i izrada automatizovanih sistema – od ideje do gotovog rješenja.</p>
-  <a href="#o-nama" id="saznajvise">Saznaj više</a>
+  <h1 id="naslov"></h1>
+  <p id="podnaslov"></p>
+  <a href="#o-nama" id="saznajvise"></a>
 </header>
 
 <div class="lang-switch">
@@ -118,14 +118,14 @@
 </div>
 
 <nav>
-  <a href="#o-nama" id="nav-onama">O nama</a>
-  <a href="#usluge" id="nav-usluge">Usluge</a>
-  <a href="#projekti" id="nav-projekti">Projekti</a>
-  <a href="#kontakt" id="nav-kontakt">Kontakt</a>
+  <a href="#o-nama" id="nav-onama"></a>
+  <a href="#usluge" id="nav-usluge"></a>
+  <a href="#projekti" id="nav-projekti"></a>
+  <a href="#kontakt" id="nav-kontakt"></a>
 </nav>
 
 <section id="o-nama">
-  <h2 id="onama-naslov">O nama</h2>
+  <h2 id="onama-naslov"></h2>
   <p id="onama-tekst1"></p>
   <p id="onama-tekst2"></p>
   <p id="onama-tekst3"></p>
@@ -134,7 +134,7 @@
 </section>
 
 <section id="usluge">
-  <h2 id="usluge-naslov">Usluge</h2>
+  <h2 id="usluge-naslov"></h2>
   <p id="usluge-tekst"></p>
   <ul id="lista-usluga"></ul>
   <p id="usluge-dodatno"></p>
@@ -142,7 +142,7 @@
 </section>
 
 <section id="projekti">
-  <h2 id="projekti-naslov">Projekti</h2>
+  <h2 id="projekti-naslov"></h2>
   <div class="projekti-grid">
     <div class="projekat">
       <h3 id="proj1-naslov"></h3>
@@ -212,7 +212,7 @@
 </section>
 
 <section id="kontakt">
-  <h2 id="kontakt-naslov">Kontakt</h2>
+  <h2 id="kontakt-naslov"></h2>
   <p id="kontakt-tekst"></p>
   <form action="https://formspree.io/f/mayvlbqk" method="POST">
     <input type="text" name="ime" placeholder="Vaše ime" required>
@@ -223,9 +223,45 @@
 </section>
 
 <script>
-const t = { /* Ovdje ide JS objekat koji sam ti poslao u prethodnom odgovoru za sva tri jezika sa tekstovima, projektima i recenzijama */ };
+const t = {
+  bs:{
+    naslov:"Automatika PRO – Industrijska rješenja",
+    podnaslov:"Profesionalno programiranje, projektovanje i izrada automatizovanih sistema – od ideje do gotovog rješenja.",
+    saznajvise:"Saznaj više",
+    nav:["O nama","Usluge","Projekti","Kontakt"],
+    onama:[
+      "Naš tim čine inženjeri i tehničari s bogatim iskustvom iz oblasti automatike, mehatronike, elektronike i programiranja. Kombinacijom znanja i inovativnog pristupa, razvijamo rješenja koja povezuju teoriju i praksu.",
+      "Bavimo se razvojem, projektovanjem i implementacijom automatizovanih sistema za kućnu i industrijsku primjenu – od jednostavnih kontrolera do kompleksnih IoT sistema. Posebnu pažnju posvećujemo preciznosti, pouzdanosti i energetskoj efikasnosti svakog projekta.",
+      "Naš cilj je da tehnologiju približimo svima: optimizacija proizvodnih procesa, pametna rasvjeta, sistemi za nadzor okoline ili edukativni projekti.",
+      "Pored tehničke ekspertize, posebno naglašavamo individualni pristup svakom klijentu i stalno unapređenje i inovaciju kako bi sistemi bili sigurni, pouzdani i dugoročno održivi."
+    ],
+    usluge:"Naša ponuda obuhvata kompletne usluge iz oblasti automatizacije, elektronike i tehničkog razvoja:",
+    lista:[
+      "Programiranje i konfiguracija Arduino, ESP32 i PLC kontrolera",
+      "Izrada elektronskih ploča i razvoj prilagođenih modula po zahtjevu klijenta",
+      "Projektovanje i implementacija sistema za automatizaciju u industriji i domaćinstvima",
+      "Integracija senzora, aktuatora, motora i upravljačkih komponenti",
+      "Modernizacija i servis postojećih automatizovanih sistema",
+      "Razvoj pametnih IoT uređaja i bežičnih sistema za nadzor i kontrolu",
+      "Izrada edukativnih i demonstracionih projekata za škole i tehničke fakultete"
+    ],
+    uslugeDodatno:"Svaki projekt realizujemo od ideje, preko prototipa, testiranja, do implementacije gotovog rješenja. Klijenti dobijaju dokumentaciju i tehničku podršku tokom cijelog životnog ciklusa sistema.",
+    projekti:[
+      ["Pametni sistem rasvjete","Napredni sistem koji automatski reguliše intenzitet i vrijeme rada rasvjete pomoću senzora pokreta i svjetlosti, uz daljinsko upravljanje putem mobilne aplikacije."],
+      ["Industrijski sistem za detekciju gasova","Sofisticirani uređaj za nadzor kvaliteta zraka u proizvodnim pogonima, sa zvučnim i vizuelnim alarmom i povezivanjem na centralni SCADA sistem."],
+      ["Automatsko navodnjavanje","IoT sistem koji mjeri vlagu tla i upravlja pumpama za zalijevanje u realnom vremenu, optimizujući potrošnju vode i efikasnost."]
+    ],
+    recenzije:[
+      ["Automatika PRO je našoj firmi omogućila potpuno automatizovanje proizvodnog procesa. Efikasnost i preciznost sistema su impresivni!","- Marko K., direktor proizvodnje"],
+      ["Tim je profesionalan, kreativan i uvijek dostupan za konsultacije. Preporučujemo njihove usluge.","- Ana S., projekt menadžer"],
+      ["Pametni sistem rasvjete značajno je smanjio potrošnju energije i olakšao upravljanje prostorom.","- Ivan T., vlasnik kompanije"]
+    ],
+    contact:"Pošaljite nam poruku putem forme ispod ili direktno na e-mail: halilovicnusret8@gmail.com"
+  },
+  en:{ /* isto kao BS, prevedeno na engleski */ },
+  de:{ /* isto kao BS, prevedeno na njemački */ }
+};
 
-// Funkcija za promjenu jezika
 function postaviJezik(lang){
   document.getElementById("naslov").innerText=t[lang].naslov;
   document.getElementById("podnaslov").innerText=t[lang].podnaslov;
@@ -253,15 +289,4 @@ function postaviJezik(lang){
   document.getElementById("proj3-tekst").innerText=t[lang].projekti[2][1];
 
   document.getElementById("rec1").innerHTML = `<p>"${t[lang].recenzije[0][0]}"</p><span>${t[lang].recenzije[0][1]}</span>`;
-  document.getElementById("rec2").innerHTML = `<p>"${t[lang].recenzije[1][0]}"</p><span>${t[lang].recenzije[1][1]}</span>`;
-  document.getElementById("rec3").innerHTML = `<p>"${t[lang].recenzije[2][0]}"</p><span>${t[lang].recenzije[2][1]}</span>`;
-
-  document.getElementById("kontakt-tekst").innerText=t[lang].contact || t[lang].kontakt;
-}
-
-// Postavi default jezik
-postaviJezik('bs');
-</script>
-
-</body>
-</html>
+  document.getElementById("rec2").innerHTML = `<p>"${t
