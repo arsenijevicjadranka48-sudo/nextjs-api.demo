@@ -55,6 +55,10 @@
   .projekat { background:#f0f8ff; border-radius:10px; padding:15px; box-shadow:0 1px 5px rgba(0,0,0,0.1); }
   .projekat h3 { color:#0059b3; margin-bottom:10px; }
 
+  .galerija { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; margin-top:20px; }
+  .galerija img { width:100%; border-radius:10px; cursor:pointer; transition: transform 0.3s; }
+  .galerija img:hover { transform:scale(1.05); }
+
   form { display:flex; flex-direction:column; gap:10px; max-width:500px; margin:auto; }
   input, textarea, button { padding:10px; border-radius:5px; border:1px solid #ccc; font-size:1em; }
   button { background:#003366; color:white; font-weight:bold; border:none; cursor:pointer; }
@@ -121,6 +125,20 @@
       <p id="proj3-tekst"></p>
     </div>
   </div>
+
+  <div class="galerija">
+    <img src="projekat1.jpg" alt="Projekat 1">
+    <img src="projekat2.jpg" alt="Projekat 2">
+    <img src="projekat3.jpg" alt="Projekat 3">
+    <img src="projekat4.jpg" alt="Projekat 4">
+    <img src="projekat5.jpg" alt="Projekat 5">
+    <img src="projekat6.jpg" alt="Projekat 6">
+    <img src="projekat7.jpg" alt="Projekat 7">
+    <img src="projekat8.jpg" alt="Projekat 8">
+    <img src="projekat9.jpg" alt="Projekat 9">
+    <img src="projekat10.jpg" alt="Projekat 10">
+  </div>
+
   <a class="btn-back" href="#pocetna">Nazad na početak</a>
 </section>
 
@@ -152,50 +170,13 @@ function postaviJezik(lang){
   document.getElementById("nav-usluge").innerText=t[lang].nav[1];
   document.getElementById("nav-projekti").innerText=t[lang].nav[2];
   document.getElementById("nav-kontakt").innerText=t[lang].nav[3];
-
-  // Sekcije naslovi
-  document.getElementById("onama-naslov").innerText=t[lang].nav[0];
-  document.getElementById("usluge-naslov").innerText=t[lang].nav[1];
-  document.getElementById("projekti-naslov").innerText=t[lang].nav[2];
-  document.getElementById("kontakt-naslov").innerText=t[lang].nav[3];
-
-  // Tekstovi
   document.getElementById("onama-tekst1").innerText=t[lang].onama[0];
   document.getElementById("onama-tekst2").innerText=t[lang].onama[1];
   document.getElementById("onama-tekst3").innerText=t[lang].onama[2];
   document.getElementById("usluge-tekst").innerText=t[lang].usluge;
   document.getElementById("lista-usluga").innerHTML=t[lang].lista.map(li=>`<li>${li}</li>`).join("");
-
-  // Projekti
   document.getElementById("proj1-naslov").innerText=t[lang].projekti[0][0];
   document.getElementById("proj1-tekst").innerText=t[lang].projekti[0][1];
   document.getElementById("proj2-naslov").innerText=t[lang].projekti[1][0];
   document.getElementById("proj2-tekst").innerText=t[lang].projekti[1][1];
-  document.getElementById("proj3-naslov").innerText=t[lang].projekti[2][0];
-  document.getElementById("proj3-tekst").innerText=t[lang].projekti[2][1];
-
-  // Kontakt
-  document.getElementById("kontakt-tekst").innerText=t[lang].kontakt;
-}
-
-window.onload=function(){ postaviJezik('bs'); }(lang){
-  document.getElementById("naslov").innerText=t[lang].naslov;
-  document.getElementById("podnaslov").innerText=t[
-
-<!-- Galerija Projekata -->
-<section id="galerija" style="padding:60px 20px; background:white; margin:20px auto; max-width:1200px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
-  <h2 style="color:#003366; margin-bottom:20px; text-align:center;">Galerija Projekata</h2>
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;">
-    <img src="projekat1.jpg" alt="Projekat 1" style="width:100%; border-radius:10px;">
-    <img src="projekat2.jpg" alt="Projekat 2" style="width:100%; border-radius:10px;">
-    <img src="projekat3.jpg" alt="Projekat 3" style="width:100%; border-radius:10px;">
-    <img src="projekat4.jpg" alt="Projekat 4" style="width:100%; border-radius:10px;">
-    <img src="projekat5.jpg" alt="Projekat 5" style="width:100%; border-radius:10px;">
-    <img src="projekat6.jpg" alt="Projekat 6" style="width:100%; border-radius:10px;">
-    <img src="projekat7.jpg" alt="Projekat 7" style="width:100%; border-radius:10px;">
-    <img src="projekat8.jpg" alt="Projekat 8" style="width:100%; border-radius:10px;">
-    <img src="projekat9.jpg" alt="Projekat 9" style="width:100%; border-radius:10px;">
-    <img src="projekat10.jpg" alt="Projekat 10" style="width:100%; border-radius:10px;">
-  </div>
-</section>
-
+  document.getElementById("proj
